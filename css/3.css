@@ -1,0 +1,110 @@
+/* Basic Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #34a853;
+    --light-green-bg: #e8f5e9; /* Light green for icon background */
+    --icon-green: #34a853; /* Darker green for icon itself */
+    --text-dark: #222;
+    --border-light: #f0f0f0; /* Very light border */
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.04);
+}
+
+/* Main Container */
+.frequency-selector-container {
+    width: 100%;
+    max-width: 400px; /* Max width similar to mobile screen */
+}
+
+/* Back Link Styling (Same as previous) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.frequency-selector-container h1 {
+    font-size: 1.7em; /* Slightly smaller than previous H1 */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Frequency List Container */
+.frequency-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between frequency items */
+}
+
+/* Individual Frequency Item Styling */
+.frequency-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--card-bg); /* Default border hidden */
+    border-radius: 18px; /* Highly rounded corners */
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px var(--shadow-color); /* Subtle shadow */
+}
+
+.frequency-item:hover {
+    border-color: #d5d5d5; /* Subtle border on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Selected State Styling */
+.frequency-item.selected {
+    border-color: var(--primary-green);
+    border-width: 2px;
+}
+
+/* Frequency Icon Container */
+.frequency-icon {
+    width: 40px; /* Adjust size */
+    height: 40px;
+    background-color: var(--light-green-bg);
+    border-radius: 10px; /* Rounded square */
+    margin-right: 15px;
+    display: flex; /* Center the icon inside */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Styling for the actual icon image/SVG */
+.frequency-icon img,
+.frequency-icon svg { /* Style both img and svg */
+    width: 22px; /* Size of the icon graphic */
+    height: 22px;
+    /* If using SVG, set fill: var(--icon-green); */
+    /* If using PNG/JPG, you might need filter for color, or use a pre-colored icon */
+    filter: invert(48%) sepia(60%) saturate(1483%) hue-rotate(90deg) brightness(90%) contrast(86%); /* Approximate green filter */
+}
+
+
+/* Frequency Name Styling */
+.frequency-name {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex-grow: 1;
+}

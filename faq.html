@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>flexrentz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>>
+<!-- Navigation -->
+<nav class="flex items-center justify-between p-5 bg-white shadow-md">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10">
+    </div>
+  
+    <!-- Mobile menu button (hidden on larger screens) -->
+    <div class="md:hidden">
+      <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  
+    <!-- Navigation Links -->
+    <div class="hidden md:flex items-center space-x-8" id="nav-links">
+      <ul class="flex items-center space-x-8">
+        <li><a href="index.html" class="text-gray-800 hover:text-green-800 transition">Home</a></li>
+        
+        <!-- Dropdown Menu -->
+        <li class="relative group">
+          <a href="about.html" class="text-gray-800 hover:text-green-800 transition flex items-center">
+            About Us
+            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </a>
+          <ul class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg p-4 w-48 z-50">
+            <li class="mb-2"><a href="faq.html" class="text-gray-700 hover:text-green-700 block">FAQS</a></li>
+            <li><a href="constomer.html" class="text-gray-700 hover:text-green-700 block">Customer Policy</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="#" class="text-gray-800 hover:text-green-800 transition">Book a Service</a></li>
+        <li><a href="pricing.html" class="text-gray-800 hover:text-green-800 transition">Pricing</a></li>
+        <li><a href="contact.html" class="text-gray-800 hover:text-green-800 transition">Contact Us</a></li>
+      </ul>
+      
+      <!-- Book Now Button -->
+      <a href="#" class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
+        Book Now
+      </a>
+    </div>
+  </nav>
+  
+  <!-- Mobile Menu (hidden by default) -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 py-2 absolute w-full z-50">
+    <ul class="space-y-2 px-4">
+      <li><a href="index.html" class="block py-2 text-gray-800 hover:text-green-800">Home</a></li>
+      
+      <li class="relative">
+        <a href="about.html" class="block py-2 text-gray-800 hover:text-green-800 flex items-center justify-between">
+          About Us
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <ul class="pl-4 hidden" id="mobile-dropdown">
+          <li><a href="faq.html" class="block py-2 text-gray-700 hover:text-green-700">FAQS</a></li>
+          <li><a href="constomer.html" class="block py-2 text-gray-700 hover:text-green-700">Customer Policy</a></li>
+        </ul>
+      </li>
+      
+      <li><a href="#" class="block py-2 text-gray-800 hover:text-green-800">Book a Service</a></li>
+      <li><a href="pricing.html" class="block py-2 text-gray-800 hover:text-green-800">Pricing</a></li>
+      <li><a href="contact.html" class="block py-2 text-gray-800 hover:text-green-800">Contact Us</a></li>
+      <li>
+        <a href="#" class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center mt-2 mb-2">
+          Book Now
+        </a>
+      </li>
+    </ul>
+  </div>
+  <section class="relative bg-gray-500 bg-cover bg-center py-20 text-white text-center px-4 sm:px-6" style="background-image: url('images/faq1.webp')">
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4">Frequently Asked Questions</h1>
+      <p class="text-lg sm:text-xl opacity-90 max-w-2xl mx-auto">
+        Got questions? We've got answers. From pricing to scheduling, our FAQ covers it all.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Left Column -->
+        <div class="space-y-4">
+          <!-- FAQ Item 1 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50" open>
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Why hire FlexRentz Clean/Neat?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Because we go beyond cleaning — we transform your space and your peace of mind. At FlexRentz Clean/Neat, we combine expert cleaning, smart organization, and personalized care to deliver a service that fits perfectly into your lifestyle. Whether it's your home, office, or a special space, our trained team will tackle the mess and set up simple systems to keep things in order.
+              </p>
+              <p class="text-gray-600 mt-4">
+                Plus, every client gets a dedicated relationship manager to ensure a smooth, stress-free experience from start to finish. We're fast, friendly, and focused on excellence — that's why we're the trusted choice across Africa.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 2 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Will my session be Confidential?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Yes, absolutely. Confidentiality is paramount. Our team adheres to strict privacy policies.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 3 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Can I request a refund?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Please refer to our cancellation and refund policy page for detailed information.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 4 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Do you Do pickup and Delivery?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Pickup and delivery services may be available for certain organizational tasks. Please inquire during your consultation.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 5 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              What if in need to reschedule an Appointment
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                We understand things change. Please provide at least 24 hours notice for rescheduling to avoid any fees. Refer to our booking policy for details.
+              </p>
+            </div>
+          </details>
+        </div>
+  
+        <!-- Right Column -->
+        <div class="space-y-4">
+          <!-- FAQ Item 6 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Which area of home do you clean?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                We clean all standard residential areas including bedrooms, bathrooms, kitchens, living rooms, dining areas, and hallways. Specific requests can be discussed.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 7 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              How do I get started with organizing?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Getting started is easy! Book a consultation, and we'll assess your space and discuss your goals to create a customized organization plan.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 8 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              What takes place at the consultation?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                During the consultation, we'll tour your space, discuss your needs and challenges, outline potential solutions and timelines, and provide a service estimate.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 9 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Are your services nationwide?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Currently, our services are focused on specific regions within Africa. Please check our service area map or contact us for availability in your location.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 10 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              Couch and rug cleaning frequency?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                Frequency depends on usage and household factors (pets, kids). Generally, professional cleaning is recommended every 12-18 months, with regular vacuuming in between.
+              </p>
+            </div>
+          </details>
+  
+          <!-- FAQ Item 11 -->
+          <details class="group bg-green-600 rounded-3xl overflow-hidden transition-colors duration-300 open:bg-green-50">
+            <summary class="flex items-center p-5 cursor-pointer text-white group-open:text-gray-800 list-none">
+              <span class="flex items-center justify-center w-7 h-7 bg-white text-green-600 rounded-full mr-4 group-open:bg-green-600 group-open:text-white transition-colors duration-300">
+                +
+              </span>
+              What if something get damaged or stolen?
+            </summary>
+            <div class="px-5 pb-5 ml-11 border-t border-gray-200 border-opacity-20 group-open:border-opacity-100">
+              <p class="text-gray-600 mt-4">
+                We are insured and bonded. In the unlikely event of damage or loss attributed to our service, please contact us immediately to initiate a claim process according to our terms and conditions.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <h2 class="text-3xl font-bold text-green-600 mb-4">Get In Touch With Us Today!</h2>
+          <p class="text-gray-600 mb-4">
+            Have questions or ready to book your cleaning? Our team is just a call or message away.
+          </p>
+          <p class="text-gray-600 mb-8">
+            Get in touch today — let's make your space shine!
+          </p>
+          
+          <div class="contact-details mb-6">
+            <p class="font-semibold text-gray-800">Phone Number</p>
+            <p class="text-gray-600">+23470 123 456 780</p>
+          </div>
+          
+          <div class="contact-details">
+            <p class="font-semibold text-gray-800">Email Address</p>
+            <p class="text-gray-600">FlexRentzneat&clean@officialmail.com</p>
+          </div>
+        </div>
+  
+        <!-- Contact Form -->
+        <div class="contact-form-wrapper bg-white border border-gray-200 rounded-lg p-6 sm:p-8">
+          <form action="#" method="post" class="contact-form">
+            <div class="mb-6">
+              <label for="name" class="block font-medium text-gray-800 mb-2">Name*</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="Enter your name" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              >
+            </div>
+            
+            <div class="mb-6">
+              <label for="email" class="block font-medium text-gray-800 mb-2">Email Address*</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="Enter email address" 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+              >
+            </div>
+            
+            <div class="mb-6">
+              <label for="message" class="block font-medium text-gray-800 mb-2">Message*</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5" 
+                placeholder="Type here..." 
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 resize-y"
+              ></textarea>
+            </div>
+            
+            <button 
+              type="submit" 
+              class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-green-600 text-white pt-12 pb-8">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+        <!-- About Section -->
+        <div class="footer-about">
+          <a href="#" class="flex items-center mb-4">
+            <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-8 mr-2">
+            <span class="text-white font-semibold text-lg">Flexrentz</span>
+          </a>
+          <p class="text-white text-opacity-90 text-sm mt-4">
+            Flexrentz Neat and Clean is Jalingo's trusted name for professional, stress-free cleaning services. With a dedicated team, modern tools, and a strong focus on detail.
+          </p>
+        </div>
+  
+        <!-- Services Links -->
+        <div class="footer-links">
+          <h4 class="text-lg font-semibold mb-4">Services</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">Book a service</a></li>
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">Customer policy</a></li>
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">Pricing</a></li>
+          </ul>
+        </div>
+  
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">Home</a></li>
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">Contact Us</a></li>
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">About Us</a></li>
+            <li><a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">FAQs</a></li>
+          </ul>
+        </div>
+  
+        <!-- Social Links -->
+        <div class="footer-social">
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <ul class="space-y-2">
+            <li>
+              <a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                </svg>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                </svg>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
+                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                </svg>
+                Instagram
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Footer Bottom -->
+      <div class="border-t border-white border-opacity-20 pt-6 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white text-opacity-80 text-xs mb-4 md:mb-0">Copyright © 2025. Flexrentz. All rights reserved.</p>
+        <nav class="flex space-x-4">
+          <a href="#" class="text-white text-opacity-80 hover:text-opacity-100 hover:underline text-xs">Terms & Conditions</a>
+          <a href="#" class="text-white text-opacity-80 hover:text-opacity-100 hover:underline text-xs">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>  
+    <script src="/script/navbar.js"></script
+</body>
+</html>

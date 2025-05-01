@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/1.css">
+    <link rel="stylesheet" href="css/2.css">
+    <link rel="stylesheet" href="css/3.css">
+    <link rel="stylesheet" href="css/4.css">
+    <link rel="stylesheet" href="css/5.css">
+    <link rel="stylesheet" href="css/6.css">
+    <link rel="stylesheet" href="css/7.css">
+    <link rel="stylesheet" href="css/8.css">
+</head>
+<body>
+    <button onclick="OpenModal()" style="padding: 20px; background-color: green; color: white;">Service</button>
+    <div class="location-selector" style="display: none;" id="location">
+        <button onclick="closeLocation()">x</button>
+        <h2>Select Location</h2>
+        <hr>
+        <div class="selected-location" onclick="selecteService();">
+            Taraba State
+        </div>
+        <!-- If this was a real dropdown, you'd have more options here or JS interaction -->
+    </div>
+    <div class="service-selector-container" style="display: none;" id="selectService">
+        <a href="#" class="back-link" onclick="BackToState()">
+            <span class="arrow">←</span> <!-- Left arrow entity -->
+            Back
+        </a>
+    
+        <h1>Select a Service</h1>
+    
+        <div class="service-list">
+            <!-- Service Item 1 (Selected) -->
+            <div class="service-item selected" onclick="ShowBedroomList()">
+                <img src="images/cleaner2.jpg" alt="Lite Regular Cleaning" class="service-thumbnail">
+                <span class="service-name">Lite Regular Cleaning</span>
+            </div>
+    
+            <!-- Service Item 2 -->
+            <div class="service-item">
+                <img src="images/hero.jpeg" alt="Deep Cleaning" class="service-thumbnail">
+                <span class="service-name">Deep Cleaning</span>
+            </div>
+    
+            <!-- Service Item 3 -->
+            <div class="service-item">
+                <img src="images/rug-cleaning.jpg" alt="Rugs and Carpet Cleaning" class="service-thumbnail">
+                <span class="service-name">Rugs and Carpet Cleaning</span>
+            </div>
+    
+            <!-- Service Item 4 -->
+            <div class="service-item">
+                <img src="images/fumigation.jpg" alt="Fumigation" class="service-thumbnail">
+                <span class="service-name">Fumigation</span>
+            </div>
+        </div>
+    </div>
+    
+<div class="service-selector-container" style="display: none;" id="BedroomList">
+    <a href="#" class="back-link" onclick="BackToSelectService()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Select a Service</h1>
+
+    <div class="service-options-grid">
+        <!-- Service Option Card 1 (Selected) -->
+        <div class="service-option-card selected" onclick="showOneTimeCleaning()">
+            <h3>1 Bedroom Flat</h3>
+            <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 1hr 30mins</p>
+            <p class="price">Starts at ₦9,136.43</p>
+        </div>
+
+        <!-- Service Option Card 2 -->
+        <div class="service-option-card">
+             <h3>2 Bedroom Flat</h3>
+            <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 2hrs 30mins</p>
+            <p class="price">Starts at ₦11,286.43</p>
+        </div>
+
+        <!-- Service Option Card 3 -->
+         <div class="service-option-card">
+            <h3>3 Bedroom Flat</h3>
+            <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 3hr 30mins</p>
+            <p class="price">Starts at ₦16,661.43</p>
+        </div>
+
+        <!-- Service Option Card 4 -->
+        <div class="service-option-card">
+            <h3>3 Bedroom Duplex</h3>
+            <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 3hrs 30mins</p>
+            <p class="price">Starts at ₦17,736.43</p>
+        </div>
+
+        <!-- Service Option Card 5 -->
+        <div class="service-option-card">
+            <h3>4 Bedroom Duplex</h3>
+             <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 3hrs 30mins</p>
+            <p class="price">Starts at ₦20,961.43</p>
+        </div>
+
+        <!-- Service Option Card 6 -->
+        <div class="service-option-card">
+            <h3>5 Bedroom Duplex</h3>
+            <p>Our Lite Regular cleaning is for making sure your Cleaning Pro cleans and tidies the home surfaces with available products in your home. For an extensive cleaning, check our Deep(Spring) Cleaning Services. Service duration up to 3hrs 30mins</p>
+            <p class="price">Starts at ₦23,111.43</p>
+        </div>
+    </div>
+</div>
+<div class="frequency-selector-container" style="display: none;" id="onetime">
+    <a href="#" class="back-link" onclick="BackToBedroom()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Choose Service Frequency</h1>
+
+    <div class="frequency-list">
+        <!-- Frequency Item 1 (Selected) -->
+        <div class="frequency-item selected" >
+            <div class="frequency-icon">
+                <!-- Placeholder for actual icon SVG or image -->
+                <img src="placeholder-clock-icon.svg" alt="Frequency Icon">
+            </div>
+            <span class="frequency-name">One-time Cleaning</span>
+        </div>
+
+        <!-- Frequency Item 2 -->
+        <div class="frequency-item" onclick="ShowSummary()">
+             <div class="frequency-icon">
+                 <img src="placeholder-clock-icon.svg" alt="Frequency Icon">
+            </div>
+            <span class="frequency-name">Twice Monthly Cleaning</span>
+        </div>
+
+        <!-- Frequency Item 3 -->
+        <div class="frequency-item">
+            <div class="frequency-icon">
+                 <img src="placeholder-clock-icon.svg" alt="Frequency Icon">
+            </div>
+            <span class="frequency-name">Weekly Cleaning</span>
+        </div>
+    </div>
+</div>
+<div class="summary-container" style="display: none;" id="summary">
+    <a href="#" class="back-link" onclick="BackToOnTime()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Summary</h1>
+
+    <div class="summary-card">
+        <h3>1 Bedroom Flat - Lite Regular Cleaning</h3>
+        <p class="frequency">Frequency: One-time Cleaning</p>
+        <p class="total">
+            Total: <span class="price-value">₦9,136.43</span>
+        </p>
+    </div>
+
+    <button class="next-button" onclick="ShowDate()">Next Step</button>
+</div>
+<div class="datetime-picker-container" style="display: none;" id="showdate">
+    <a href="#" class="back-link" onclick="BackToSummary()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Select Date & Time</h1>
+
+    <div class="picker-card">
+        <!-- Date Picker Section -->
+        <div class="date-picker">
+            <div class="date-nav">
+                <button class="nav-button prev-month">←</button>
+                <span class="current-month-year">April 2025</span>
+                <button class="nav-button next-month">→</button>
+            </div>
+            <div class="days-header">
+                <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+            </div>
+            <div class="calendar-grid">
+                <!-- Dates - Add classes: .day, .other-month, .selected-date -->
+                <div class="day other-month">30</div>
+                <div class="day other-month">31</div>
+                <div class="day">1</div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day">8</div>
+                <div class="day">9</div>
+                <div class="day selected-date">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day">19</div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+                <div class="day">30</div>
+                <div class="day other-month">1</div>
+                <div class="day other-month">2</div>
+                <div class="day other-month">3</div>
+            </div>
+        </div>
+
+        <!-- Time Picker Section -->
+        <div class="time-picker">
+            <div class="time-list">
+                <!-- Time Slots - Add classes: .time-slot, .selected-time -->
+                <div class="time-slot">9:30 AM</div>
+                <div class="time-slot">10:00 AM</div>
+                <div class="time-slot">10:30 AM</div>
+                <div class="time-slot">11:00 AM</div>
+                <div class="time-slot selected-time">11:30 AM</div>
+                <div class="time-slot">12:00 PM</div>
+                <div class="time-slot">12:30 PM</div>
+                <div class="time-slot">1:00 PM</div>
+                <!-- Add more time slots as needed to show scrolling -->
+                 <div class="time-slot">1:30 PM</div>
+                 <div class="time-slot">2:00 PM</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="next-button" onclick="ShowLogin()">Next Step</button>
+</div>
+<div class="login-container" style="display: none;" id="login">
+    <a href="#" class="back-link" onclick="BackToDate()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Existing Customer's Account</h1>
+
+    <div class="login-form-card">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter email address" >
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" >
+            </div>
+            <button class="login-button" onclick="ShowCreateAccount()">Login</button>
+        </form>
+        <p class="signup-prompt">
+            Don't have an account? <a href="#">Create account</a>
+        </p>
+    </div>
+</div>
+<div class="signup-container" style="display: none;" id="showcreate">
+    <a href="#" class="back-link" onclick="BackToLogin()">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Create Account</h1>
+
+    <div class="signup-form-card">
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter full name" >
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter email address" >
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number" >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" >
+            </div>
+
+            <div class="form-group">
+                <label for="address">House Address</label>
+                <input type="text" id="address" name="address" placeholder="Address Example:No. 2 Mile-six road, Jalingo" >
+            </div>
+
+            <button type="submit" class="signup-button" onclick="ShowVerification()">Create Account</button>
+        </form>
+    </div>
+</div>
+<div class="verify-container" style="display: none;" id="showv">
+    <a href="#" class="back-link">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Verify Order Details</h1>
+
+    <div class="details-card">
+        <h3>1 Bedroom Flat - Lite Regular Cleaning</h3>
+
+        <p class="frequency">Frequency: One-time Cleaning</p>
+
+        <div class="datetime-info">
+            <span class="badge date-badge">
+                <!-- Option 1: Placeholder text/emoji -->
+                 📅 <!-- Or use an <img> or icon font -->
+                <!-- Option 2: Image -->
+                <!-- <img src="calendar-icon.png" alt="Calendar"> -->
+                April 17, 2025
+            </span>
+            <span class="badge time-badge">
+                 <!-- Option 1: Placeholder text/emoji -->
+                 🕘 <!-- Or use an <img> or icon font -->
+                 <!-- Option 2: Image -->
+                 <!-- <img src="clock-icon.png" alt="Clock"> -->
+                9:00AM
+            </span>
+        </div>
+
+        <p class="customer-info">
+            Customer's Name: <span class="value">Nathaniel Nathaniel</span>
+        </p>
+        <p class="customer-info">
+            Email Address: <span class="value">Nathaniel@officialmail.com</span>
+        </p>
+        <p class="total-price">
+            Total Price: <span class="price-value">₦9,136.43</span>
+        </p>
+    </div>
+
+    <button class="payment-button">Proceed to Payment</button>
+</div>
+
+
+<div class="service-selector-container" style="display: none;">
+    <a href="#" class="back-link">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Select a Service</h1>
+
+    <div class="service-options-grid">
+        <!-- Service Option Card 1 -->
+        <div class="service-option-card">
+            <h3>Small rugs</h3>
+            <p>30 sq. ft. Equivalent of a 5 x 6 feet rug. This service covers Washing, Sucking out moisture and Drying with machines. Please note the rug may need to be air dried for 24 - 48 hours before sitting on it. It includes the cost of logistics (Pickup & Drop off), manpower, machinery & cleaning products.</p>
+            <p class="price">Starts at ₦25,650</p>
+        </div>
+
+        <!-- Service Option Card 2 -->
+        <div class="service-option-card">
+             <h3>Medium rugs</h3>
+             <p>75 sq. ft. equivalent of 9 x 8.5 feet rug. This service covers Washing, Sucking out moisture and Drying with machines. Please note the rug may need to be air dried for 24 - 48 hours before sitting on it. It includes the cost of logistics (Pickup & Drop off), manpower, machinery & cleaning products.</p>
+            <p class="price">Starts at ₦33,750</p> <!-- Note: Price corrected based on image -->
+        </div>
+
+        <!-- Service Option Card 3 -->
+         <div class="service-option-card">
+            <h3>Large rugs</h3>
+            <p>80 sq. ft. An equivalent of 8 x 10 feet rug. This service covers Washing, Sucking out moisture and Drying with machines. Please note the rug may need to be air dried for 24 - 48 hours before sitting on it. It includes the cost of logistics (Pickup & Drop off), manpower, machinery & cleaning products.</p>
+             <p class="price">Starts at ₦53,224.33</p> <!-- Note: Price corrected based on image -->
+        </div>
+
+        <!-- Add an empty div if needed to force layout, or rely on grid properties -->
+        <!-- <div class="service-option-card empty"></div> -->
+
+    </div>
+</div>
+<div class="service-selector-container" style="display: none;">
+    <a href="#" class="back-link">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Select a Service</h1>
+
+    <div class="service-options-grid">
+        <!-- Service Option Card 1 -->
+        <div class="service-option-card">
+            <div class="card-info">
+                <h3>One Bedroom</h3>
+                <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦60,750</p>
+        </div>
+
+        <!-- Service Option Card 2 -->
+        <div class="service-option-card">
+             <div class="card-info">
+                 <h3>Two Bedroom</h3>
+                <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦67,500</p>
+        </div>
+
+        <!-- Service Option Card 3 -->
+         <div class="service-option-card">
+             <div class="card-info">
+                <h3>Three Bedroom</h3>
+                <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦81,000</p>
+        </div>
+
+        <!-- Service Option Card 4 -->
+        <div class="service-option-card">
+            <div class="card-info">
+                <h3>Four Bedroom</h3>
+                <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦104,000</p>
+        </div>
+
+        <!-- Service Option Card 5 -->
+        <div class="service-option-card">
+             <div class="card-info">
+                <h3>Five Bedroom</h3>
+                <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦113,100</p>
+        </div>
+
+        <!-- Service Option Card 6 -->
+        <div class="service-option-card">
+            <div class="card-info">
+                 <h3>Six Bedroom</h3>
+                 <p class="duration">Up to One hour</p>
+            </div>
+            <p class="price">Starts at ₦123,500</p>
+        </div>
+    </div>
+</div>
+<div class="service-selector-container">
+    <a href="#" class="back-link">
+        <span class="arrow">←</span> <!-- Left arrow entity -->
+        Back
+    </a>
+
+    <h1>Select a Service</h1>
+
+    <div class="service-options-grid">
+        <!-- Service Option Card 1 -->
+        <div class="service-option-card">
+            <h3>Deep Cleaning Flat</h3>
+            <p>Deep(Spring) cleanings are a lot more extensive than your standard regular/subscription cleaning, this service includes a project manager, machinery, chemicals, products, logistics & cleaning professionals.</p>
+            <p class="price">Starts at ₦81,162.50</p>
+        </div>
+
+        <!-- Service Option Card 2 -->
+        <div class="service-option-card">
+             <h3>Deep Cleaning Duplex</h3>
+             <p>Deep(Spring) cleanings are a lot more extensive than your standard regular/subscription cleaning, this service includes a project manager, machinery, chemicals, products, logistics & cleaning professionals.</p>
+            <p class="price">Starts at ₦98,792.50</p>
+        </div>
+    </div>
+</div>
+<script src="script/modal.js"></script>
+</body>
+</html>

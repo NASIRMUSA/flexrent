@@ -1,0 +1,66 @@
+/* Basic Body Styles (Optional - for context) */
+body {
+    font-family: 'Poppins', sans-serif; /* Using Poppins as likely font */
+    background-color: #fff;
+    padding: 40px; /* Add some space around the element */
+    display: flex; /* Optional: center element */
+    justify-content: center; /* Optional: center element */
+    align-items: flex-start; /* Optional: align top */
+    position: relative;
+}
+
+/* Color variable (use the green from previous examples if consistent) */
+:root {
+    --primary-green: #34a853; /* Or adjust to match the border precisely */
+    --text-dark: #333333;
+    --border-light: #eeeeee;
+}
+
+/* Container for the component */
+.location-selector {
+    width: 100%; /* Take available width */
+    max-width: 450px; /* Limit maximum width */
+    position: absolute;
+   top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    
+
+}
+
+/* Heading Style */
+.location-selector h2 {
+    font-size: 1.6em; /* Adjust size as needed */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 10px 0; /* Margin bottom */
+    padding: 0;
+}
+
+/* Divider Line Style */
+.location-selector hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Thin line */
+    background-color: var(--border-light); /* Light grey color */
+    margin-top: 5px;
+    margin-bottom: 25px; /* Space between line and selection box */
+}
+
+/* Selected Location Box Style */
+.selected-location {
+    border: 2px solid var(--primary-green); /* Green border, adjust thickness if needed */
+    border-radius: 25px; /* High border-radius for rounded shape */
+    padding: 12px 20px; /* Padding inside the box */
+    background-color: #fff; /* White background inside */
+    color: var(--text-dark); /* Dark text color */
+    font-size: 1em; /* Standard text size */
+    font-weight: 500; /* Slightly bolder than normal paragraph */
+    cursor: pointer; /* Indicate it might be clickable */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Optional: Hover effect */
+.selected-location:hover {
+    background-color: #f9f9f9; /* Slight background change on hover */
+}

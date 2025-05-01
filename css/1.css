@@ -1,0 +1,110 @@
+/* Basic Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    color: #333;
+    /* Simulate app-like container */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #34a853; /* Green color for selected border */
+    --text-dark: #222;
+    --text-light-grey: #555;
+    --border-light: #e0e0e0; /* Light grey for default border */
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 400px; /* Max width similar to mobile screen */
+    position: absolute;
+    top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-flex; /* Use inline-flex to keep it inline but allow flex alignment */
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px; /* Space below back link */
+}
+
+.back-link .arrow {
+    font-size: 1.5em; /* Make arrow slightly larger */
+    margin-right: 8px;
+    line-height: 1; /* Adjust line height for alignment */
+}
+
+.back-link:hover {
+    color: var(--primary-green);
+}
+
+/* Heading Styling */
+.service-selector-container h1 {
+    font-size: 1.8em; /* Adjust size */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0; /* Margin bottom */
+}
+
+/* Service List Container */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between service items */
+}
+
+/* Individual Service Item Styling */
+.service-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--border-light); /* Default light grey border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 12px 15px; /* Padding inside */
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.service-item:hover {
+    border-color: #ccc; /* Slightly darker border on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected State Styling */
+.service-item.selected {
+    border-color: var(--primary-green); /* Green border when selected */
+    border-width: 2px; /* Slightly thicker border when selected */
+}
+
+/* Thumbnail Image Styling */
+.service-thumbnail {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border-radius: 10px; /* Rounded corners for image */
+    margin-right: 15px; /* Space between image and text */
+    object-fit: cover; /* Crop image nicely */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Service Name Styling */
+.service-name {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex-grow: 1; /* Allow text to take remaining space */
+}

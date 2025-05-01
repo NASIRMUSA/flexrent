@@ -1,0 +1,112 @@
+/* Basic Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Light background */
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align content top */
+    min-height: 100vh;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #34a853;
+    --text-dark: #222;
+    --text-grey: #555;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Main Container */
+.summary-container {
+    width: 100%;
+    max-width: 420px; /* Max width for mobile-like view */
+    background-color: #fff; /* White background for the container */
+    padding: 25px;
+    border-radius: 10px; /* Optional container rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Optional container shadow */
+}
+
+/* Back Link Styling (Consistent with previous) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.summary-container h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Summary Card Styling */
+.summary-card {
+    background-color: var(--card-bg);
+    border: 1px solid #f0f0f0; /* Very light border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 30px; /* Space before button */
+    box-shadow: 0 3px 8px var(--shadow-color);
+}
+
+/* Card Content Styling */
+.summary-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4; /* Adjust line height if needed */
+}
+
+.summary-card .frequency {
+    font-size: 0.95em;
+    color: var(--text-grey);
+    margin-bottom: 15px;
+}
+
+.summary-card .total {
+    font-size: 1.15em; /* Slightly larger total */
+    font-weight: 600;
+    color: var(--text-dark); /* "Total:" part is dark */
+    margin-top: 10px;
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.summary-card .price-value {
+    color: var(--primary-green); /* Green price value */
+    /* Inherits font-weight 600 from parent .total */
+    margin-left: 5px; /* Space after colon */
+}
+
+/* Next Step Button Styling */
+.next-button {
+    display: block; /* Make it block level */
+    width: 100%; /* Full width */
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 15px 20px; /* Generous padding */
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 50px; /* Fully rounded */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3); /* Green shadow */
+}
+
+.next-button:hover {
+    background-color: #2b8a42; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}

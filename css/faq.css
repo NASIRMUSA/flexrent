@@ -1,0 +1,469 @@
+/* --- General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff; /* Base background */
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Use a consistent green color */
+:root {
+    --primary-green: #34a853; /* Approximate green from buttons/footer */
+    --light-green-bg: #e8f5e9; /* Light green for open FAQ */
+    --dark-text: #333;
+    --light-text: #fff;
+    --grey-text: #555;
+    --border-color: #ddd;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-green);
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 50px; /* Rounded corners */
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: #2b8a42; /* Darker green on hover */
+    color: var(--light-text);
+    opacity: 1;
+}
+
+
+/* --- Header --- */
+.site-header {
+    background-color: var(--light-text);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.4em;
+    color: var(--dark-text);
+}
+.logo img {
+    height: 35px; /* Adjust as needed */
+    margin-right: 8px;
+    /* Add styling for your actual logo image */
+    background-color: #ccc; /* Placeholder background */
+}
+.logo:hover {
+    opacity: 1;
+}
+
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 25px;
+}
+
+.main-nav a {
+    color: var(--dark-text);
+    font-weight: 500;
+}
+.main-nav a:hover {
+    color: var(--primary-green);
+    opacity: 1;
+}
+
+/* --- Hero FAQ --- */
+.hero-faq {
+    background-image: url('placeholder-hero-bg.jpg'); /* *** REPLACE with your hero image *** */
+    background-color: #555; /* Fallback */
+    background-size: cover;
+    background-position: center;
+    color: var(--light-text);
+    text-align: center;
+    padding: 80px 20px;
+    position: relative; /* For potential overlay */
+}
+.hero-faq::before { /* Optional dark overlay for text readability */
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+     position: relative; /* To stay above overlay */
+     z-index: 1;
+}
+
+.hero-faq h1 {
+    font-size: 2.8em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-faq p {
+    font-size: 1.1em;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- FAQ Section --- */
+.faq-section {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Slightly off-white background */
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 30px;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border-radius: 30px; /* Rounded corners for the whole item */
+    overflow: hidden; /* Keep content within rounded corners */
+    background-color: var(--primary-green); /* Default closed state */
+    transition: background-color 0.3s ease;
+}
+
+.faq-item summary {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--light-text); /* Text color for closed state */
+    list-style: none; /* Remove default marker */
+    position: relative;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none; /* Hide default marker for Chrome/Safari */
+}
+
+.faq-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: var(--light-text);
+    color: var(--primary-green); /* Plus sign color */
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    line-height: 1; /* Adjust for vertical centering */
+    flex-shrink: 0;
+}
+
+/* Styles for when the FAQ item is open */
+.faq-item[open] {
+    background-color: var(--light-green-bg); /* Light green when open */
+}
+
+.faq-item[open] summary {
+    color: var(--dark-text); /* Text color for open state */
+}
+
+.faq-item[open] .faq-icon {
+     background-color: var(--primary-green); /* Icon background when open */
+     color: var(--light-text); /* Icon color when open */
+     /* Content could change to '-' using JS or keep '+' */
+     /* transform: rotate(45deg); Example for 'x' */
+}
+
+.faq-content {
+    padding: 15px 20px 20px 63px; /* Align content with text, accounting for icon+margin */
+    color: var(--grey-text);
+    border-top: 1px solid rgba(0,0,0,0.05); /* Subtle separator */
+}
+.faq-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* --- Contact Section --- */
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-info h2 {
+    color: var(--primary-green);
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: var(--grey-text);
+    margin-bottom: 15px;
+}
+
+.contact-details {
+    margin-top: 25px;
+}
+.contact-details p {
+    margin-bottom: 5px;
+}
+.contact-details strong {
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+.contact-form-wrapper {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    background-color: #fff; /* Ensure it stands out if section bg changes */
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--dark-text);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px; /* Rounded inputs */
+    font-family: inherit;
+    font-size: 1em;
+}
+.contact-form textarea {
+    border-radius: 8px; /* Textarea slightly less rounded */
+    resize: vertical; /* Allow vertical resize only */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 2px rgba(52, 168, 83, 0.2);
+}
+
+.contact-form button[type="submit"] {
+    width: auto; /* Adjust button width */
+    margin-top: 10px;
+}
+
+/* --- Footer --- */
+.site-footer {
+    background-color: var(--primary-green);
+    color: var(--light-text);
+    padding-top: 50px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.footer-logo img {
+    height: 30px;
+    /* Add specific styling */
+    background-color: #eee; /* Placeholder */
+}
+.footer-logo span {
+    color: var(--light-text);
+    font-weight: 600;
+}
+
+.footer-about p {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-top: 15px;
+    padding-right: 20px; /* Prevent text running into next column */
+}
+
+.footer-links h4, .footer-social h4 {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.footer-links ul, .footer-social ul {
+    padding: 0;
+}
+
+.footer-links li, .footer-social li {
+    margin-bottom: 10px;
+}
+
+.footer-links a, .footer-social a {
+    color: var(--light-text);
+    font-size: 0.95em;
+    opacity: 0.9;
+    display: flex; /* For aligning icons if used */
+    align-items: center;
+}
+.footer-links a:hover, .footer-social a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+/* Add styles for social icons here */
+.footer-social a i { /* Example if using Font Awesome */
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+.footer-legal a {
+    color: var(--light-text);
+    margin-left: 15px;
+}
+.footer-legal a:hover {
+     text-decoration: underline;
+     opacity: 1;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .faq-grid {
+        grid-template-columns: 1fr; /* Stack FAQ columns */
+    }
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack contact columns */
+    }
+    .contact-form-wrapper {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap; /* Allow header items to wrap */
+    }
+    .main-nav {
+        /* Basic: hide nav, implement mobile menu toggle later */
+        display: none;
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+    }
+    .main-nav ul {
+        flex-direction: column;
+    }
+     .main-nav li {
+        margin: 10px 0;
+        text-align: center;
+    }
+    .header-container .btn { /* Adjust Book Now button position */
+       margin-left: auto; /* Push to right */
+    }
+
+    .hero-faq h1 {
+        font-size: 2.2em;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns on smaller screens */
+    }
+     .footer-about { /* Span full width if needed */
+         grid-column: span 2;
+     }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-legal {
+        margin-top: 10px;
+    }
+     .footer-legal a {
+         margin: 0 8px;
+     }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr; /* Stack footer columns fully */
+        text-align: center;
+    }
+    .footer-about p {
+        padding-right: 0;
+    }
+    .footer-links ul, .footer-social ul {
+        padding: 0;
+    }
+     .footer-social li {
+         justify-content: center;
+     }
+     .footer-social a {
+         display: inline-flex; /* Center social links nicely */
+     }
+}

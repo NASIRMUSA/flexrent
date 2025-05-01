@@ -1,0 +1,129 @@
+/* Basic Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa; /* Slightly off-white background */
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #34a853;
+    --text-dark: #222;
+    --text-grey: #777; /* Grey for duration */
+    --border-light: #f0f0f0; /* Very light border */
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05); /* Lighter shadow */
+}
+
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 750px; /* Wider container for two columns */
+    background-color: #fff; /* White background for the container itself */
+    padding: 25px;
+    border-radius: 10px; /* Optional: round the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling (Consistent) */
+.service-selector-container h1 {
+    font-size: 1.8em; font-weight: 600; color: var(--text-dark); margin: 0 0 30px 0;
+}
+
+/* Service Options Grid */
+.service-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always two columns */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Individual Service Option Card */
+.service-option-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light); /* Subtle border */
+    border-radius: 18px; /* More rounded corners */
+    padding: 18px; /* Slightly adjusted padding */
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px var(--shadow-color); /* Lighter shadow */
+    display: flex; /* Use flexbox for internal layout */
+    justify-content: space-between; /* Push info block and price apart */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.service-option-card:hover {
+    border-color: #dcdcdc; /* Slightly darker border on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Info block (Title + Duration) */
+.card-info {
+    /* Takes space automatically due to flex parent */
+}
+
+/* Card Content Styling */
+.service-option-card h3 {
+    font-size: 1.05em; /* Adjusted size */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 4px 0; /* Reduced margin bottom */
+}
+
+.service-option-card .duration {
+    font-size: 0.85em;
+    color: var(--text-grey);
+    margin: 0; /* Remove paragraph margin */
+    line-height: 1.4;
+}
+
+.service-option-card .price {
+    font-weight: 500;
+    color: var(--primary-green); /* Green price text */
+    font-size: 0.95em;
+    margin: 0; /* Remove paragraph margin */
+    line-height: 1.4; /* Match title's approximate vertical position */
+    white-space: nowrap; /* Prevent price from wrapping */
+    margin-left: 10px; /* Ensure some space from the info block */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-options-grid {
+        grid-template-columns: 1fr; /* Stack to single column */
+        gap: 15px;
+    }
+    .service-selector-container {
+        padding: 20px;
+        max-width: 450px; /* Adjust max-width for single column */
+    }
+    .service-selector-container h1 {
+       font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+     .service-option-card {
+         padding: 15px;
+     }
+     .service-option-card h3 {
+         font-size: 1em;
+     }
+     .service-option-card .duration {
+         font-size: 0.8em;
+     }
+     .service-option-card .price {
+         font-size: 0.9em;
+     }
+}

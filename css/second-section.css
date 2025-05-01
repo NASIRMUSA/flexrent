@@ -1,0 +1,36 @@
+.second-section{
+    margin-top: 20px;
+    height: 100vh;
+}
+.bestcleaning{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+}
+.best-section{
+    width: 50%;
+}
+.best-section h2{
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.best-section p{
+    margin-bottom: 25px;
+    font-size: 18px;
+
+}
+.back-img{
+    width: 400px;
+    height: auto;
+}
+.top-img{
+    position: absolute;
+    width: 250px;
+    height: auto;
+    top: 45%;
+    left: 60%;
+}
