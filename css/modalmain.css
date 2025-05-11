@@ -1,0 +1,1273 @@
+/* Basic Body Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    padding: 20px;
+    color: #333;
+    /* Simulate app-like container */
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* Color Variables */
+:root {
+    --primary-green: #34a853; /* Green color for selected border */
+    --text-dark: #222;
+    --text-light-grey: #555;
+    --border-light: #e0e0e0; /* Light grey for default border */
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 400px; /* Max width similar to mobile screen */
+    position: absolute;
+    top: 50%;
+   left: 50%;
+   -ms-transform: translate(-50%, -50%);
+   transform: translate(-50%, -50%);
+}
+
+/* Back Link Styling */
+.back-link {
+    display: inline-flex; /* Use inline-flex to keep it inline but allow flex alignment */
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px; /* Space below back link */
+}
+
+.back-link .arrow {
+    font-size: 1.5em; /* Make arrow slightly larger */
+    margin-right: 8px;
+    line-height: 1; /* Adjust line height for alignment */
+}
+
+.back-link:hover {
+    color: var(--primary-green);
+}
+
+/* Heading Styling */
+.service-selector-container h1 {
+    font-size: 1.8em; /* Adjust size */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0; /* Margin bottom */
+}
+
+/* Service List Container */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between service items */
+}
+
+/* Individual Service Item Styling */
+.service-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--border-light); /* Default light grey border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 12px 15px; /* Padding inside */
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.service-item:hover {
+    border-color: #ccc; /* Slightly darker border on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Selected State Styling */
+.service-item.selected {
+    border-color: var(--primary-green); /* Green border when selected */
+    border-width: 2px; /* Slightly thicker border when selected */
+}
+
+/* Thumbnail Image Styling */
+.service-thumbnail {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    border-radius: 10px; /* Rounded corners for image */
+    margin-right: 15px; /* Space between image and text */
+    object-fit: cover; /* Crop image nicely */
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Service Name Styling */
+.service-name {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex-grow: 1; /* Allow text to take remaining space */
+}
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 750px; /* Wider container for two columns */
+    background-color: #fff; /* White background for the container itself */
+    padding: 25px;
+    border-radius: 10px; /* Optional: round the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    height: 100vh;
+   
+
+}
+
+/* Back Link Styling (Same as previous) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling (Same as previous) */
+.service-selector-container h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 30px 0; /* More margin bottom */
+}
+
+/* Service Options Grid */
+.service-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Space between grid items */
+    overflow-x: auto;
+}
+
+/* Individual Service Option Card */
+.service-option-card {
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--card-bg); /* Default: border same as background (effectively invisible) */
+    border-radius: 16px; /* Rounded corners */
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 8px var(--shadow-color); /* Subtle shadow */
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.service-option-card:hover {
+    border-color: #d0d0d0; /* Subtle border on hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content Styling */
+.service-option-card h3 {
+    font-size: 1.15em; /* Slightly larger title */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.service-option-card p {
+    font-size: 0.9em;
+    color: var(--text-grey);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow paragraph to take up space */
+}
+.service-option-card p:last-of-type { /* Target the price paragraph specifically */
+   margin-bottom: 0;
+   flex-grow: 0; /* Don't let price grow */
+}
+
+
+.service-option-card .price {
+    font-weight: 600;
+    color: var(--primary-green); /* Green price text */
+    font-size: 1em;
+    margin-top: auto; /* Push price to bottom if card heights vary */
+}
+
+/* Selected State Styling */
+.service-option-card.selected {
+    border-color: var(--primary-green);
+    border-width: 2px;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.2); /* Subtle green shadow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-options-grid {
+        grid-template-columns: 1fr; /* Stack to single column */
+        gap: 15px;
+    }
+    .service-selector-container {
+        padding: 20px;
+    }
+    .service-selector-container h1 {
+       font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+     .service-option-card {
+         padding: 15px;
+     }
+     .service-option-card h3 {
+         font-size: 1.1em;
+     }
+      .service-option-card p {
+         font-size: 0.85em;
+     }
+      .service-option-card .price {
+         font-size: 0.95em;
+     }
+}
+/* Main Container */
+.frequency-selector-container {
+    width: 100%;
+    max-width: 400px; /* Max width similar to mobile screen */
+}
+
+/* Back Link Styling (Same as previous) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.frequency-selector-container h1 {
+    font-size: 1.7em; /* Slightly smaller than previous H1 */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Frequency List Container */
+.frequency-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between frequency items */
+}
+
+/* Individual Frequency Item Styling */
+.frequency-item {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1.5px solid var(--card-bg); /* Default border hidden */
+    border-radius: 18px; /* Highly rounded corners */
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px var(--shadow-color); /* Subtle shadow */
+}
+
+.frequency-item:hover {
+    border-color: #d5d5d5; /* Subtle border on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Selected State Styling */
+.frequency-item.selected {
+    border-color: var(--primary-green);
+    border-width: 2px;
+}
+
+/* Frequency Icon Container */
+.frequency-icon {
+    width: 40px; /* Adjust size */
+    height: 40px;
+    background-color: var(--light-green-bg);
+    border-radius: 10px; /* Rounded square */
+    margin-right: 15px;
+    display: flex; /* Center the icon inside */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Styling for the actual icon image/SVG */
+.frequency-icon img,
+.frequency-icon svg { /* Style both img and svg */
+    width: 22px; /* Size of the icon graphic */
+    height: 22px;
+    /* If using SVG, set fill: var(--icon-green); */
+    /* If using PNG/JPG, you might need filter for color, or use a pre-colored icon */
+    filter: invert(48%) sepia(60%) saturate(1483%) hue-rotate(90deg) brightness(90%) contrast(86%); /* Approximate green filter */
+}
+
+
+/* Frequency Name Styling */
+.frequency-name {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-dark);
+    flex-grow: 1;
+}
+
+/* Main Container */
+.summary-container {
+    width: 100%;
+    max-width: 420px; /* Max width for mobile-like view */
+    background-color: #fff; /* White background for the container */
+    padding: 25px;
+    border-radius: 10px; /* Optional container rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Optional container shadow */
+}
+
+/* Back Link Styling (Consistent with previous) */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-size: 1em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.summary-container h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Summary Card Styling */
+.summary-card {
+    background-color: var(--card-bg);
+    border: 1px solid #f0f0f0; /* Very light border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 20px;
+    margin-bottom: 30px; /* Space before button */
+    box-shadow: 0 3px 8px var(--shadow-color);
+}
+
+/* Card Content Styling */
+.summary-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4; /* Adjust line height if needed */
+}
+
+.summary-card .frequency {
+    font-size: 0.95em;
+    color: var(--text-grey);
+    margin-bottom: 15px;
+}
+
+.summary-card .total {
+    font-size: 1.15em; /* Slightly larger total */
+    font-weight: 600;
+    color: var(--text-dark); /* "Total:" part is dark */
+    margin-top: 10px;
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.summary-card .price-value {
+    color: var(--primary-green); /* Green price value */
+    /* Inherits font-weight 600 from parent .total */
+    margin-left: 5px; /* Space after colon */
+}
+
+/* Next Step Button Styling */
+.next-button {
+    display: block; /* Make it block level */
+    width: 100%; /* Full width */
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 15px 20px; /* Generous padding */
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 50px; /* Fully rounded */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3); /* Green shadow */
+}
+
+.next-button:hover {
+    background-color: #2b8a42; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}
+/* Main Container */
+.datetime-picker-container {
+    width: 100%;
+    max-width: 500px; /* Adjust width to fit both pickers nicely */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.datetime-picker-container h1 {
+    font-size: 1.7em; font-weight: 600; color: var(--text-dark); margin: 0 0 25px 0;
+}
+
+/* Picker Card Container (holds date & time) */
+.picker-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+    display: flex;
+    gap: 10px; /* Space between date and time picker */
+}
+
+/* Date Picker Section */
+.date-picker {
+    flex: 2; /* Give date picker more space */
+}
+
+.date-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 0 5px;
+}
+
+.nav-button {
+    background-color: var(--button-bg);
+    border: 1px solid var(--button-border);
+    border-radius: 8px;
+    color: var(--text-grey);
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+.nav-button:hover {
+    background-color: #e9ecef;
+}
+
+.current-month-year {
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+.days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 0.85em;
+    font-weight: 500;
+    color: var(--text-grey);
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px; /* Space between date cells */
+}
+
+.day {
+    text-align: center;
+    padding: 8px 0; /* Vertical padding */
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--text-dark);
+    border-radius: 8px; /* Slightly rounded days */
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.day:hover:not(.selected-date):not(.other-month) {
+    background-color: var(--light-green-bg);
+}
+
+.day.other-month {
+    color: var(--text-light-grey);
+    cursor: default;
+}
+
+.day.selected-date {
+    background-color: var(--primary-green);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* Time Picker Section */
+.time-picker {
+    flex: 1; /* Takes less space than date picker */
+    border-left: 1px solid var(--border-light);
+    padding-left: 10px;
+    max-height: 260px; /* Set a height for the scrollable area */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.time-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Space between time slots */
+}
+
+.time-slot {
+    background-color: var(--button-bg);
+    border: 1.5px solid var(--button-bg);
+    border-radius: 8px;
+    padding: 10px 0; /* Vertical padding, adjust as needed */
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.time-slot:hover:not(.selected-time) {
+    background-color: #e9ecef;
+    border-color: #d5d5d5;
+}
+
+.time-slot.selected-time {
+    border-color: var(--primary-green);
+    background-color: var(--light-green-bg); /* Light green background when selected */
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+/* Custom Scrollbar (Optional, Webkit browsers) */
+.time-picker::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+.time-picker::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 10px;
+}
+.time-picker::-webkit-scrollbar-thumb {
+    background: #ccc; /* Handle color */
+    border-radius: 10px;
+}
+.time-picker::-webkit-scrollbar-thumb:hover {
+    background: #bbb; /* Handle color on hover */
+}
+
+
+/* Next Step Button Styling (Consistent) */
+.next-button {
+    display: block; width: 100%;
+    background-color: var(--primary-green); color: #fff; border: none;
+    padding: 15px 20px; font-size: 1.05em; font-weight: 500;
+    border-radius: 50px; cursor: pointer; text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+}
+.next-button:hover {
+    background-color: #2b8a42; box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}
+
+/* Responsive Adjustments (Optional) */
+@media (max-width: 540px) {
+    .picker-card {
+        flex-direction: column; /* Stack date and time */
+        gap: 20px;
+    }
+    .time-picker {
+        border-left: none; /* Remove left border when stacked */
+        border-top: 1px solid var(--border-light); /* Add top border */
+        padding-left: 0; /* Remove padding */
+        padding-top: 15px; /* Add padding top */
+        max-height: 180px; /* Adjust height when stacked */
+    }
+    .datetime-picker-container h1 {
+        font-size: 1.5em;
+    }
+    .datetime-picker-container {
+        padding: 15px;
+    }
+}
+/* Main Container */
+.login-container {
+    width: 100%;
+    max-width: 420px; /* Max width for mobile-like view */
+    background-color: #fff; /* White background for the container */
+    padding: 25px;
+    border-radius: 10px; /* Optional container rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Optional container shadow */
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.login-container h1 {
+    font-size: 1.6em; /* Adjust size */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Login Form Card Styling */
+.login-form-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 18px; /* Higher border radius for the card */
+    padding: 25px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px; /* Space between form fields */
+}
+
+/* Label Styling */
+.form-group label {
+    display: block; /* Label on its own line */
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px; /* Space between label and input */
+}
+
+/* Input Field Styling */
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 14px; /* Rounded input fields */
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder {
+    color: var(--placeholder-grey);
+    opacity: 1; /* Firefox */
+}
+.form-group input::-ms-input-placeholder { /* Edge */
+   color: var(--placeholder-grey);
+}
+
+/* Input Focus Styling */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(52, 168, 83, 0.15);
+    background-color: #fff;
+}
+
+/* Login Button Styling */
+.login-button {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 14px 20px; /* Adjusted padding */
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 50px; /* Fully rounded */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+    margin-top: 15px; /* Space above button */
+    margin-bottom: 25px; /* Space below button */
+}
+
+.login-button:hover {
+    background-color: #2b8a42;
+    box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}
+
+/* Signup Prompt Styling */
+.signup-prompt {
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--text-grey);
+    margin: 0; /* Remove default margins */
+}
+
+.signup-prompt a {
+    color: var(--primary-green);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.signup-prompt a:hover {
+    text-decoration: underline;
+}
+
+/* Main Container */
+.signup-container {
+    width: 100%;
+    max-width: 450px; /* Adjust width as needed */
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.signup-container h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Signup Form Card Styling */
+.signup-form-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 18px; /* Higher border radius for the card */
+    padding: 30px 25px; /* More padding inside card */
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+.form-group:last-of-type { /* Reduce margin on last field before button */
+    margin-bottom: 25px;
+}
+
+
+/* Label Styling */
+.form-group label {
+    display: block;
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+/* Input Field Styling */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-light);
+    border-radius: 14px; /* Rounded input fields */
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder Styling */
+.form-group input::placeholder {
+    color: var(--placeholder-grey);
+    opacity: 1; /* Firefox */
+    font-size: 0.95em; /* Make placeholder slightly smaller */
+}
+.form-group input::-ms-input-placeholder { /* Edge */
+   color: var(--placeholder-grey);
+   font-size: 0.95em;
+}
+
+/* Input Focus Styling */
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-green);
+    box-shadow: 0 0 0 3px rgba(52, 168, 83, 0.15);
+    background-color: #fff;
+}
+
+/* Form Row for side-by-side fields */
+.form-row {
+    display: flex;
+    gap: 15px; /* Space between email and phone */
+    margin-bottom: 20px; /* Same margin as .form-group */
+}
+.form-row .form-group {
+    flex: 1; /* Each group takes equal space */
+    margin-bottom: 0; /* Remove bottom margin from groups inside row */
+}
+
+
+/* Signup Button Styling */
+.signup-button {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 14px 20px;
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 50px; /* Fully rounded */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+    margin-top: 10px; /* Adjust space above button */
+}
+
+.signup-button:hover {
+    background-color: #2b8a42;
+    box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .form-row {
+        flex-direction: column; /* Stack email and phone */
+        gap: 0; /* Remove gap when stacked */
+        margin-bottom: 0; /* Remove margin from row container */
+    }
+    .form-row .form-group {
+        margin-bottom: 20px; /* Add margin back to stacked fields */
+    }
+     .signup-container {
+        padding: 15px;
+    }
+    .signup-form-card {
+        padding: 20px 15px;
+    }
+    .signup-container h1 {
+        font-size: 1.5em;
+    }
+}
+/* Main Container */
+.verify-container {
+    width: 100%;
+    max-width: 420px; /* Max width for mobile-like view */
+    background-color: #fff; /* White background for the container */
+    padding: 25px;
+    border-radius: 10px; /* Optional container rounding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Optional container shadow */
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling */
+.verify-container h1 {
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 25px 0;
+}
+
+/* Details Card Styling */
+.details-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light);
+    border-radius: 18px; /* High radius like image */
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px var(--shadow-color);
+}
+
+/* Card Content Styling */
+.details-card h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.details-card .frequency {
+    font-size: 0.95em;
+    color: var(--text-grey);
+    margin-bottom: 15px;
+}
+
+/* Date & Time Badges Container */
+.datetime-info {
+    display: flex;
+    gap: 10px; /* Space between badges */
+    margin-bottom: 20px; /* Space below badges */
+}
+
+/* Individual Badge Styling */
+.badge {
+    display: inline-flex; /* To align icon and text */
+    align-items: center;
+    background-color: var(--light-green-bg);
+    color: var(--icon-green); /* Text color matches icon */
+    padding: 6px 12px; /* Adjust padding */
+    border-radius: 50px; /* Fully rounded badges */
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Styling for Icons within Badges (if using img or icon font) */
+.badge img,
+.badge i, /* Example for Font Awesome */
+.badge span:first-child { /* Example for Emoji/Text icon */
+    margin-right: 6px; /* Space between icon and text */
+    /* Adjust size/color as needed */
+    font-size: 1.1em; /* Make emoji/icon slightly larger */
+    color: var(--icon-green);
+    /* If using filter for images: */
+    /* filter: invert(48%) sepia(60%) saturate(1483%) hue-rotate(90deg) brightness(90%) contrast(86%); */
+}
+
+
+/* Customer Info Lines */
+.customer-info {
+    font-size: 0.95em;
+    color: var(--text-grey); /* Label part is grey */
+    margin-bottom: 10px; /* Space between info lines */
+    line-height: 1.5;
+}
+.customer-info .value {
+    color: var(--text-dark); /* Value part is dark */
+    font-weight: 500; /* Make value slightly bolder */
+    margin-left: 5px; /* Space after colon if implied */
+}
+
+
+/* Total Price Line */
+.total-price {
+    font-size: 1.1em;
+    font-weight: 500; /* Medium weight for label */
+    color: var(--text-dark);
+    margin-top: 15px; /* More space above total */
+    margin-bottom: 0;
+}
+
+.total-price .price-value {
+    color: var(--primary-green); /* Green price */
+    font-weight: 600; /* Bolder price */
+    margin-left: 8px; /* Space before price */
+}
+
+/* Payment Button Styling */
+.payment-button {
+    display: block;
+    width: 100%;
+    background-color: var(--primary-green);
+    color: #fff;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 50px; /* Fully rounded */
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(52, 168, 83, 0.3);
+}
+
+.payment-button:hover {
+    background-color: #2b8a42;
+    box-shadow: 0 6px 12px rgba(52, 168, 83, 0.4);
+}
+
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 750px; /* Wider container for two columns */
+    background-color: #fff; /* White background for the container itself */
+    padding: 25px;
+    border-radius: 10px; /* Optional: round the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling (Consistent) */
+.service-selector-container h1 {
+    font-size: 1.8em; font-weight: 600; color: var(--text-dark); margin: 0 0 30px 0;
+}
+
+/* Service Options Grid */
+.service-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always two columns */
+    gap: 25px; /* Space between grid items */
+}
+
+/* Individual Service Option Card */
+.service-option-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light); /* Subtle border */
+    border-radius: 16px; /* Rounded corners */
+    padding: 20px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 8px var(--shadow-color); /* Subtle shadow */
+    display: flex; /* Use flexbox for content alignment */
+    flex-direction: column; /* Stack content vertically */
+}
+
+.service-option-card:hover {
+    border-color: #d5d5d5; /* Slightly darker border on hover */
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content Styling */
+.service-option-card h3 {
+    font-size: 1.15em;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.service-option-card p {
+    font-size: 0.9em;
+    color: var(--text-grey);
+    line-height: 1.6; /* Increased line height for readability */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow paragraph to take up space */
+}
+/* Target the price paragraph specifically */
+.service-option-card p.price {
+   margin-bottom: 0;
+   flex-grow: 0; /* Don't let price grow */
+   margin-top: auto; /* Push price to bottom */
+   font-weight: 500; /* Price text is slightly bolder */
+   color: var(--primary-green); /* Green price text */
+   font-size: 0.95em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-options-grid {
+        grid-template-columns: 1fr; /* Stack to single column */
+        gap: 20px;
+    }
+    .service-selector-container {
+        padding: 20px;
+        max-width: 500px; /* Adjust max-width for single column */
+    }
+    .service-selector-container h1 {
+       font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+     .service-option-card {
+         padding: 15px;
+     }
+     .service-option-card h3 {
+         font-size: 1.1em;
+     }
+      .service-option-card p {
+         font-size: 0.85em;
+         line-height: 1.5;
+     }
+      .service-option-card .price {
+         font-size: 0.9em;
+     }
+}
+/* Main Container */
+.service-selector-container {
+    width: 100%;
+    max-width: 750px; /* Wider container for two columns */
+    background-color: #fff; /* White background for the container itself */
+    padding: 25px;
+    border-radius: 10px; /* Optional: round the container */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Back Link Styling (Consistent) */
+.back-link {
+    display: inline-flex; align-items: center; text-decoration: none;
+    color: var(--text-dark); font-size: 1em; font-weight: 500; margin-bottom: 25px;
+}
+.back-link .arrow { font-size: 1.5em; margin-right: 8px; line-height: 1; }
+.back-link:hover { color: var(--primary-green); }
+
+/* Heading Styling (Consistent) */
+.service-selector-container h1 {
+    font-size: 1.8em; font-weight: 600; color: var(--text-dark); margin: 0 0 30px 0;
+}
+
+/* Service Options Grid */
+.service-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always two columns */
+    gap: 20px; /* Space between grid items */
+}
+
+/* Individual Service Option Card */
+.service-option-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-light); /* Subtle border */
+    border-radius: 18px; /* More rounded corners */
+    padding: 18px; /* Slightly adjusted padding */
+    cursor: pointer;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 6px var(--shadow-color); /* Lighter shadow */
+    display: flex; /* Use flexbox for internal layout */
+    justify-content: space-between; /* Push info block and price apart */
+    align-items: flex-start; /* Align items to the top */
+}
+
+.service-option-card:hover {
+    border-color: #dcdcdc; /* Slightly darker border on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Card Info block (Title + Duration) */
+.card-info {
+    /* Takes space automatically due to flex parent */
+}
+
+/* Card Content Styling */
+.service-option-card h3 {
+    font-size: 1.05em; /* Adjusted size */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 4px 0; /* Reduced margin bottom */
+}
+
+.service-option-card .duration {
+    font-size: 0.85em;
+    color: var(--text-grey);
+    margin: 0; /* Remove paragraph margin */
+    line-height: 1.4;
+}
+
+.service-option-card .price {
+    font-weight: 500;
+    color: var(--primary-green); /* Green price text */
+    font-size: 0.95em;
+    margin: 0; /* Remove paragraph margin */
+    line-height: 1.4; /* Match title's approximate vertical position */
+    white-space: nowrap; /* Prevent price from wrapping */
+    margin-left: 10px; /* Ensure some space from the info block */
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-options-grid {
+        grid-template-columns: 1fr; /* Stack to single column */
+        gap: 15px;
+    }
+    .service-selector-container {
+        padding: 20px;
+        max-width: 450px; /* Adjust max-width for single column */
+    }
+    .service-selector-container h1 {
+       font-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+     .service-option-card {
+         padding: 15px;
+     }
+     .service-option-card h3 {
+         font-size: 1em;
+     }
+     .service-option-card .duration {
+         font-size: 0.8em;
+     }
+     .service-option-card .price {
+         font-size: 0.9em;
+     }
+}
+.location-selector {
+    width: 100%; /* Take available width */
+    max-width: 450px; /* Limit maximum width */
+    position: absolute;
+   top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+    
+
+}
+
+/* Heading Style */
+.location-selector h2 {
+    font-size: 1.6em; /* Adjust size as needed */
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 10px 0; /* Margin bottom */
+    padding: 0;
+}
+
+/* Divider Line Style */
+.location-selector hr {
+    border: none; /* Remove default border */
+    height: 1px; /* Thin line */
+    background-color: var(--border-light); /* Light grey color */
+    margin-top: 5px;
+    margin-bottom: 25px; /* Space between line and selection box */
+}
+
+/* Selected Location Box Style */
+.selected-location {
+    border: 2px solid var(--primary-green); /* Green border, adjust thickness if needed */
+    border-radius: 25px; /* High border-radius for rounded shape */
+    padding: 12px 20px; /* Padding inside the box */
+    background-color: #fff; /* White background inside */
+    color: var(--text-dark); /* Dark text color */
+    font-size: 1em; /* Standard text size */
+    font-weight: 500; /* Slightly bolder than normal paragraph */
+    cursor: pointer; /* Indicate it might be clickable */
+    transition: background-color 0.2s ease; /* Smooth hover effect */
+}
+
+/* Optional: Hover effect */
+.selected-location:hover {
+    background-color: #f9f9f9; /* Slight background change on hover */
+}

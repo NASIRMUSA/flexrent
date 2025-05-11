@@ -5,14 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/1.css">
-    <link rel="stylesheet" href="css/2.css">
-    <link rel="stylesheet" href="css/3.css">
-    <link rel="stylesheet" href="css/4.css">
-    <link rel="stylesheet" href="css/5.css">
-    <link rel="stylesheet" href="css/6.css">
-    <link rel="stylesheet" href="css/7.css">
-    <link rel="stylesheet" href="css/8.css">
+    <link rel="stylesheet" href="css/modalmain.css">
 </head>
 <body>
     <button onclick="OpenModal()" style="padding: 20px; background-color: green; color: white;">Service</button>
@@ -41,19 +34,19 @@
             </div>
     
             <!-- Service Item 2 -->
-            <div class="service-item">
+            <div class="service-item" onclick="ShowDeepCleaning()">
                 <img src="images/hero.jpeg" alt="Deep Cleaning" class="service-thumbnail">
                 <span class="service-name">Deep Cleaning</span>
             </div>
     
             <!-- Service Item 3 -->
-            <div class="service-item">
+            <div class="service-item" onclick="ShowRugs()">
                 <img src="images/rug-cleaning.jpg" alt="Rugs and Carpet Cleaning" class="service-thumbnail">
                 <span class="service-name">Rugs and Carpet Cleaning</span>
             </div>
     
             <!-- Service Item 4 -->
-            <div class="service-item">
+            <div class="service-item" onclick="ShowFumigation()">
                 <img src="images/fumigation.jpg" alt="Fumigation" class="service-thumbnail">
                 <span class="service-name">Fumigation</span>
             </div>
@@ -186,62 +179,13 @@
             </div>
             <div class="calendar-grid">
                 <!-- Dates - Add classes: .day, .other-month, .selected-date -->
-                <div class="day other-month">30</div>
-                <div class="day other-month">31</div>
-                <div class="day">1</div>
-                <div class="day">2</div>
-                <div class="day">3</div>
-                <div class="day">4</div>
-                <div class="day">5</div>
-                <div class="day">6</div>
-                <div class="day">7</div>
-                <div class="day">8</div>
-                <div class="day">9</div>
-                <div class="day selected-date">10</div>
-                <div class="day">11</div>
-                <div class="day">12</div>
-                <div class="day">13</div>
-                <div class="day">14</div>
-                <div class="day">15</div>
-                <div class="day">16</div>
-                <div class="day">17</div>
-                <div class="day">18</div>
-                <div class="day">19</div>
-                <div class="day">20</div>
-                <div class="day">21</div>
-                <div class="day">22</div>
-                <div class="day">23</div>
-                <div class="day">24</div>
-                <div class="day">25</div>
-                <div class="day">26</div>
-                <div class="day">27</div>
-                <div class="day">28</div>
-                <div class="day">29</div>
-                <div class="day">30</div>
-                <div class="day other-month">1</div>
-                <div class="day other-month">2</div>
-                <div class="day other-month">3</div>
-            </div>
-        </div>
-
-        <!-- Time Picker Section -->
-        <div class="time-picker">
-            <div class="time-list">
-                <!-- Time Slots - Add classes: .time-slot, .selected-time -->
-                <div class="time-slot">9:30 AM</div>
-                <div class="time-slot">10:00 AM</div>
-                <div class="time-slot">10:30 AM</div>
-                <div class="time-slot">11:00 AM</div>
-                <div class="time-slot selected-time">11:30 AM</div>
-                <div class="time-slot">12:00 PM</div>
-                <div class="time-slot">12:30 PM</div>
-                <div class="time-slot">1:00 PM</div>
-                <!-- Add more time slots as needed to show scrolling -->
-                 <div class="time-slot">1:30 PM</div>
-                 <div class="time-slot">2:00 PM</div>
-            </div>
-        </div>
-    </div>
+              <div class="calendar">
+                <input type="date" >
+              </div>
+              <div class="time">
+                <input type="time">
+              </div>
+             </div>
 
     <button class="next-button" onclick="ShowLogin()">Next Step</button>
 </div>
@@ -355,8 +299,8 @@
 </div>
 
 
-<div class="service-selector-container" style="display: none;">
-    <a href="#" class="back-link">
+<div class="service-selector-container" style="display: none;" id="rugsandcapet">
+    <a href="#" class="back-link" onclick="BackToSelectServiceThree()">
         <span class="arrow">←</span> <!-- Left arrow entity -->
         Back
     </a>
@@ -365,7 +309,7 @@
 
     <div class="service-options-grid">
         <!-- Service Option Card 1 -->
-        <div class="service-option-card">
+        <div class="service-option-card" onclick="showOneTimeCleaning()">
             <h3>Small rugs</h3>
             <p>30 sq. ft. Equivalent of a 5 x 6 feet rug. This service covers Washing, Sucking out moisture and Drying with machines. Please note the rug may need to be air dried for 24 - 48 hours before sitting on it. It includes the cost of logistics (Pickup & Drop off), manpower, machinery & cleaning products.</p>
             <p class="price">Starts at ₦25,650</p>
@@ -390,8 +334,8 @@
 
     </div>
 </div>
-<div class="service-selector-container" style="display: none;">
-    <a href="#" class="back-link">
+<div class="service-selector-container" style="display: none;" id="fumigation">
+    <a href="#" class="back-link" onclick="BackToFumigation()">
         <span class="arrow">←</span> <!-- Left arrow entity -->
         Back
     </a>
@@ -409,7 +353,7 @@
         </div>
 
         <!-- Service Option Card 2 -->
-        <div class="service-option-card">
+        <div class="service-option-card" onclick="showOneTimeCleaning()">
              <div class="card-info">
                  <h3>Two Bedroom</h3>
                 <p class="duration">Up to One hour</p>
@@ -454,8 +398,8 @@
         </div>
     </div>
 </div>
-<div class="service-selector-container">
-    <a href="#" class="back-link">
+<div class="service-selector-container" style="display: none;" id="deepcleaning">
+    <a href="#" class="back-link" onclick="BackToSelectServiceTwo()">
         <span class="arrow">←</span> <!-- Left arrow entity -->
         Back
     </a>
@@ -464,7 +408,7 @@
 
     <div class="service-options-grid">
         <!-- Service Option Card 1 -->
-        <div class="service-option-card">
+        <div class="service-option-card" onclick="showOneTimeCleaning()">
             <h3>Deep Cleaning Flat</h3>
             <p>Deep(Spring) cleanings are a lot more extensive than your standard regular/subscription cleaning, this service includes a project manager, machinery, chemicals, products, logistics & cleaning professionals.</p>
             <p class="price">Starts at ₦81,162.50</p>

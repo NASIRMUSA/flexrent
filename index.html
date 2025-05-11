@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+
     <title>flexrentz</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +14,31 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+      <style>
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(20px); opacity: 0; }
+        }
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        .animate-slide-out {
+            animation: slideOut 0.3s ease-out forwards;
+        }
+        .input-error {
+            border-color: #ef4444 !important;
+        }
+        .error-message {
+            color: #ef4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+    </style>
   </head>
   <body>
     <!-- Navigation -->
@@ -92,7 +118,7 @@
           </li>
 
           <li>
-            <a href="#" class="text-gray-800 hover:text-green-800 transition"
+            <a href="#"  id="open-modal" onclick="openModal()"  class="text-gray-800 hover:text-green-800 transition"
               >Book a Service</a
             >
           </li>
@@ -113,11 +139,11 @@
         </ul>
 
         <!-- Book Now Button -->
-        <a
+        <button
           href="#"
           class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
           Book Now
-        </a>
+        </button>
       </div>
     </nav>
 
@@ -190,11 +216,11 @@
           >
         </li>
         <li>
-          <a
-            href="#"
+          <button
+            href="#" id="" onclick="openModal()"
             class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center mt-2 mb-2">
             Book Now
-          </a>
+          </button>
         </li>
       </ul>
     </div>
@@ -203,19 +229,16 @@
     <section
       class="relative bg-[url('/images/hero.jpeg')] bg-cover bg-center h-screen flex items-center justify-start px-4 sm:px-12 md:px-16 lg:px-20 w-full">
       <!-- Dark overlay -->
-      <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+      <!-- <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div> -->
 
       <!-- Hero content -->
       <div class="relative z-20 max-w-2xl text-white">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          Over the endless cleaning?<br class="hidden sm:block" />Let us take it
-          from here.
+          For the Days You’re Too<br> Tired - We’ve Got You
         </h1>
-        <p class="text-lg sm:text-xl text-gray-200 mb-8">
-          Say goodbye to scrubbing, sweeping, and stressing. Our expert team
-          brings a touch of calm to your space with meticulous, reliable
-          cleaning
+        <p class="text-md sm:text-xl text-gray-200 mb-8">
+          Say goodbye to scrubbing, sweeping, and stressing. Our expert team brings a touch of calm to your space with meticulous, reliable cleaning
         </p>
         <a
           href="#"
@@ -230,7 +253,7 @@
           <!-- Text Section -->
           <div class="w-full lg:w-1/2 space-y-6">
             <h1
-              class="text-4xl sm:text-4xl md:text-5xl font-medium leading-tight">
+              class="text-3xl sm:text-4xl md:text-3xl font-medium text-green-600">
               Best Professional <br />
               Cleaning Services In <br />
               <span class="text-green-600">Jalingo</span>
@@ -260,19 +283,19 @@
               <img
                 src="images/cleaner1.jpg"
                 alt="Cleaner 1"
-                class="w-full max-w-lg rounded-lg shadow-xl z-10 relative" />
+                class="w-full max-w-lg rounded-lg  z-10 relative" />
               <img
                 src="images/cleaner2.jpg"
                 alt="Cleaner 2"
-                class="hidden md:block absolute -bottom-8 -right-8 w-2/5 max-w-xs rounded-lg shadow-xl border-4 border-white z-20" />
+                class="hidden md:block absolute -bottom-8 right-[55%] w-2/5 w-[300px] h-auto rounded-lg  border-4 border-white z-20" />
             </div>
           </div>
         </div>
       </div>
     </section>
     <section class="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-3">Our Services</h1>
-      <p class="text-gray-600 mb-10 max-w-2xl mx-auto">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-green-500">Our Services</h1>
+      <p class="text-gray-600 mb-10  mx-auto">
         We provide reliable, professional cleaning services tailored to your
         needs, ensuring every space is spotless, fresh, and stress-free.
       </p>
@@ -281,7 +304,7 @@
         <!-- Service Card 1 -->
         <div
           class="bg-white rounded-xl shadow-md overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl">→</span>
+          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Upholstery Maintenance</h2>
           <p class="text-gray-600 mb-5 text-sm">
             We want all of our customers to experience the impressive level of
@@ -296,7 +319,7 @@
         <!-- Service Card 2 -->
         <div
           class="bg-white rounded-xl shadow-md overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl">→</span>
+          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Rug Cleaning & Care</h2>
           <p class="text-gray-600 mb-5 text-sm">
             We pride ourselves on our exceptional customer service, and
@@ -311,7 +334,7 @@
         <!-- Service Card 3 -->
         <div
           class="bg-white rounded-xl shadow-md overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl">→</span>
+          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Organizing Consultation</h2>
           <p class="text-gray-600 mb-5 text-sm">
             Whenever you work with Flexrentz Neat/Clean, you can trust that
@@ -349,10 +372,10 @@
           <!-- Features -->
           <div class="space-y-6 mb-8">
             <!-- Feature 1 -->
-            <div class="flex items-start">
+            <div class="">
               <div
-                class="bg-green-50 text-green-500 text-2xl p-3 rounded-lg mr-4">
-                🧹
+                class="bg-green-50 text-green-500 text-2xl p-3 rounded-lg mr-4 lex justify-center items-center rounded-3xl mb-3 w-20">
+               <i class="bi bi-bucket text-green-500 text-5xl"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-1">Specialized Cleaning</h3>
@@ -364,14 +387,14 @@
             </div>
 
             <!-- Feature 2 -->
-            <div class="flex items-start">
+            <div class="">
               <div
-                class="bg-blue-50 text-blue-500 text-2xl p-3 rounded-lg mr-4">
-                🕒
+                class="bg-blue-50 text-blue-500 text-2xl p-3 w-20 mr-4 flex justify-center items-center rounded-3xl mb-3">
+                <i class="bi bi-clock-history text-green-500 text-5xl"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-1">24/7 Availability</h3>
-                <p class="text-gray-600 text-sm sm:text-base">
+                <p class="text-gray-600 text-sm sm:text-base mb-3">
                   We're here whenever you need us - day or night, weekend or
                   holidays.
                 </p>
@@ -607,21 +630,295 @@
           <p class="text-white text-opacity-80 text-xs mb-4 md:mb-0">
             Copyright © 2025. Flexrentz. All rights reserved.
           </p>
-          <nav class="flex space-x-4">
-            <a
-              href="#"
-              class="text-white text-opacity-80 hover:text-opacity-100 hover:underline text-xs"
-              >Terms & Conditions</a
-            >
-            <a
-              href="#"
-              class="text-white text-opacity-80 hover:text-opacity-100 hover:underline text-xs"
-              >Privacy Policy</a
-            >
-          </nav>
+        
         </div>
       </div>
     </footer>
+    <div id="location-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Select Location</h2>
+      <hr class="border-gray-200 mb-6">
+      <div id="location-taraba" data-location="Taraba State" class="location-option border-2 border-green-500 rounded-full py-3 px-6 text-gray-800 font-medium cursor-pointer hover:bg-gray-50 transition">Taraba State</div>
+  </div>
+
+  <!-- Service Selector -->
+  <div id="service-screen" class="hidden fixed inset-0 bg-white md:max-w-3xl mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in overflow-y-auto z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-location" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select a Service</h1>
+      <div class="space-y-4">
+          <div id="service-lite" data-service="Lite Regular Cleaning" data-next="bedroom-screen" class="service-option flex items-center bg-white border-2 border-green-500 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <img src="https://placehold.co/50x50" alt="Lite Regular Cleaning" class="w-12 h-12 rounded-lg mr-4">
+              <span class="text-gray-800 font-medium">Lite Regular Cleaning</span>
+          </div>
+          <div id="service-deep" data-service="Deep Cleaning" data-next="deepcleaning-screen" class="service-option flex items-center bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <img src="https://placehold.co/50x50" alt="Deep Cleaning" class="w-12 h-12 rounded-lg mr-4">
+              <span class="text-gray-800 font-medium">Deep Cleaning</span>
+          </div>
+          <div id="service-rugs" data-service="Rugs and Carpet Cleaning" data-next="rugs-screen" class="service-option flex items-center bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <img src="https://placehold.co/50x50" alt="Rugs and Carpet Cleaning" class="w-12 h-12 rounded-lg mr-4">
+              <span class="text-gray-800 font-medium">Rugs and Carpet Cleaning</span>
+          </div>
+          <div id="service-fumigation" data-service="Fumigation" data-next="fumigation-screen" class="service-option flex items-center bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <img src="https://placehold.co/50x50" alt="Fumigation" class="w-12 h-12 rounded-lg mr-4">
+              <span class="text-gray-800 font-medium">Fumigation</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bedroom List -->
+  <div id="bedroom-screen" class="hidden fixed inset-0 bg-white md:max-w-3xl mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in overflow-y-auto z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-service" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select Bedroom Type</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div id="bedroom-1" data-bedroom="1 Bedroom Flat" data-price="9136.43" class="bedroom-option bg-white border-2 border-green-500 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">1 Bedroom Flat</h3>
+              <p class="text-gray-600 text-sm flex-grow">Lite Regular cleaning. Duration up to 1hr 30mins.</p>
+              <p class="text-green-500 font-semibold mt-4">₦9,136.43</p>
+          </div>
+          <div id="bedroom-2" data-bedroom="2 Bedroom Flat" data-price="11286.43" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">2 Bedroom Flat</h3>
+              <p class="text-gray-600 text-sm flex-grow">Lite Regular cleaning. Duration up to 2hrs 30mins.</p>
+              <p class="text-green-500 font-semibold mt-4">₦11,286.43</p>
+          </div>
+          <div id="bedroom-3" data-bedroom="3 Bedroom Flat" data-price="16661.43" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">3 Bedroom Flat</h3>
+              <p class="text-gray-600 text-sm flex-grow">Lite Regular cleaning. Duration up to 3hrs 30mins.</p>
+              <p class="text-green-500 font-semibold mt-4">₦16,661.43</p>
+          </div>
+          <div id="bedroom-3-duplex" data-bedroom="3 Bedroom Duplex" data-price="17736.43" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">3 Bedroom Duplex</h3>
+              <p class="text-gray-600 text-sm flex-grow">Lite Regular cleaning. Duration up to 3hrs 30mins.</p>
+              <p class="text-green-500 font-semibold mt-4">₦17,736.43</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- Frequency Selector -->
+  <div id="frequency-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-bedroom" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Choose Service Frequency</h1>
+      <div class="space-y-4">
+          <div id="freq-onetime" data-frequency="One-time Cleaning" class="frequency-option flex items-center bg-white border-2 border-green-500 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <img src="https://placehold.co/20x20" alt="Frequency Icon">
+              </div>
+              <span class="text-gray-800 font-medium">One-time Cleaning</span>
+          </div>
+          <div id="freq-twice" data-frequency="Twice Monthly Cleaning" class="frequency-option flex items-center bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <img src="https://placehold.co/20x20" alt="Frequency Icon">
+              </div>
+              <span class="text-gray-800 font-medium">Twice Monthly Cleaning</span>
+          </div>
+          <div id="freq-weekly" data-frequency="Weekly Cleaning" class="frequency-option flex items-center bg-white border border-gray-200 rounded-2xl p-4 cursor-pointer hover:shadow-md transition">
+              <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                  <img src="https://placehold.co/20x20" alt="Frequency Icon">
+              </div>
+              <span class="text-gray-800 font-medium">Weekly Cleaning</span>
+          </div>
+      </div>
+  </div>
+
+  <!-- Summary -->
+  <div id="summary-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-frequency" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Summary</h1>
+      <div id="summary-card" class="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+          <h3 id="summary-service" class="text-lg font-semibold text-gray-800 mb-2"></h3>
+          <p id="summary-frequency" class="text-gray-600 text-sm mb-2"></p>
+          <p id="summary-total" class="text-gray-800 font-semibold"></p>
+      </div>
+      <button id="next-to-date" class="w-full bg-green-500 text-white py-3 rounded-full font-medium hover:bg-green-600 transition shadow-md">Next Step</button>
+  </div>
+
+  <!-- Date & Time Picker -->
+  <div id="datetime-screen" class="hidden fixed inset-0 bg-white md:max-w-lg mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-summary" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select Date & Time</h1>
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm flex flex-col md:flex-row gap-4">
+          <div class="flex-1">
+              <label for="date-input" class="block text-sm font-medium text-gray-800 mb-2">Date</label>
+              <input type="date" id="date-input" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+              <div id="date-error" class="error-message hidden">Please select a date</div>
+          </div>
+          <div class="flex-1">
+              <label for="time-input" class="block text-sm font-medium text-gray-800 mb-2">Time</label>
+              <input type="time" id="time-input" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+              <div id="time-error" class="error-message hidden">Please select a time</div>
+          </div>
+      </div>
+      <button id="next-to-login" class="w-full bg-green-500 text-white py-3 rounded-full font-medium hover:bg-green-600 transition shadow-md">Next Step</button>
+  </div>
+
+  <!-- Login -->
+  <div id="login-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-datetime" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Login to Your Account</h1>
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+          <div class="space-y-4">
+              <div>
+                  <label for="login-email" class="block text-sm font-medium text-gray-800 mb-2">Email Address</label>
+                  <input type="email" id="login-email" placeholder="Enter email address" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <div id="login-email-error" class="error-message hidden">Please enter a valid email</div>
+              </div>
+              <div>
+                  <label for="login-password" class="block text-sm font-medium text-gray-800 mb-2">Password</label>
+                  <input type="password" id="login-password" placeholder="Enter password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <div id="login-password-error" class="error-message hidden">Please enter your password</div>
+              </div>
+              <button id="login-btn" class="w-full bg-green-500 text-white py-3 rounded-full font-medium hover:bg-green-600 transition shadow-md">Login</button>
+          </div>
+          <p class="text-center text-sm text-gray-600 mt-4">
+              Don't have an account? <a href="#" id="to-signup" class="text-green-500 font-medium hover:underline">Create account</a>
+          </p>
+      </div>
+  </div>
+
+  <!-- Signup -->
+  <div id="signup-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-login" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Create Account</h1>
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+          <div class="space-y-4">
+              <div>
+                  <label for="signup-name" class="block text-sm font-medium text-gray-800 mb-2">Full Name</label>
+                  <input type="text" id="signup-name" placeholder="Enter full name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <div id="signup-name-error" class="error-message hidden">Please enter your full name</div>
+              </div>
+              <div class="flex flex-col md:flex-row gap-4">
+                  <div class="flex-1">
+                      <label for="signup-email" class="block text-sm font-medium text-gray-800 mb-2">Email Address</label>
+                      <input type="email" id="signup-email" placeholder="Enter email address" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                      <div id="signup-email-error" class="error-message hidden">Please enter a valid email</div>
+                  </div>
+                  <div class="flex-1">
+                      <label for="signup-phone" class="block text-sm font-medium text-gray-800 mb-2">Phone Number</label>
+                      <input type="tel" id="signup-phone" placeholder="Enter phone number" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                      <div id="signup-phone-error" class="error-message hidden">Please enter your phone number</div>
+                  </div>
+              </div>
+              <div>
+                  <label for="signup-password" class="block text-sm font-medium text-gray-800 mb-2">Password</label>
+                  <input type="password" id="signup-password" placeholder="Enter password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <div id="signup-password-error" class="error-message hidden">Please enter a password</div>
+              </div>
+              <div>
+                  <label for="signup-address" class="block text-sm font-medium text-gray-800 mb-2">House Address</label>
+                  <input type="text" id="signup-address" placeholder="No. 2 Mile-six road, Jalingo" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                  <div id="signup-address-error" class="error-message hidden">Please enter your address</div>
+              </div>
+              <button id="signup-btn" class="w-full bg-green-500 text-white py-3 rounded-full font-medium hover:bg-green-600 transition shadow-md">Create Account</button>
+          </div>
+      </div>
+  </div>
+
+  <!-- Verification -->
+  <div id="verify-screen" class="hidden fixed inset-0 bg-white md:max-w-md mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-signup" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Verify Order Details</h1>
+      <div id="verify-card" class="bg-white border border-gray-200 rounded-2xl p-6 mb-6 shadow-sm">
+          <h3 id="verify-service" class="text-lg font-semibold text-gray-800 mb-2"></h3>
+          <p id="verify-frequency" class="text-gray-600 text-sm mb-2"></p>
+          <div class="flex gap-2 mb-4">
+              <span id="verify-date" class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium"></span>
+              <span id="verify-time" class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium"></span>
+          </div>
+          <p id="verify-name" class="text-gray-600 text-sm mb-2"></p>
+          <p id="verify-email" class="text-gray-600 text-sm mb-2"></p>
+          <p id="verify-total" class="text-gray-800 font-semibold"></p>
+      </div>
+      <button id="proceed-payment" class="w-full bg-green-500 text-white py-3 rounded-full font-medium hover:bg-green-600 transition shadow-md">Proceed to Payment</button>
+  </div>
+
+  <!-- Additional Service Sections -->
+  <div id="deepcleaning-screen" class="hidden fixed inset-0 bg-white md:max-w-3xl mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in overflow-y-auto z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-service-deep" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select Deep Cleaning</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div id="deep-flat" data-bedroom="Deep Cleaning Flat" data-price="81162.50" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Deep Cleaning Flat</h3>
+              <p class="text-gray-600 text-sm flex-grow">Includes project manager, machinery, chemicals, products, logistics & professionals.</p>
+              <p class="text-green-500 font-semibold mt-4">₦81,162.50</p>
+          </div>
+          <div id="deep-duplex" data-bedroom="Deep Cleaning Duplex" data-price="98792.50" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Deep Cleaning Duplex</h3>
+              <p class="text-gray-600 text-sm flex-grow">Includes project manager, machinery, chemicals, products, logistics & professionals.</p>
+              <p class="text-green-500 font-semibold mt-4">₦98,792.50</p>
+          </div>
+      </div>
+  </div>
+
+  <div id="rugs-screen" class="hidden fixed inset-0 bg-white md:max-w-3xl mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in overflow-y-auto z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-service-rugs" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select Rug Size</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div id="rug-small" data-bedroom="Small rugs" data-price="25650" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Small rugs</h3>
+              <p class="text-gray-600 text-sm flex-grow">30 sq. ft. Covers washing, sucking out moisture, and drying.</p>
+              <p class="text-green-500 font-semibold mt-4">₦25,650</p>
+          </div>
+          <div id="rug-medium" data-bedroom="Medium rugs" data-price="33750" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex flex-col">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Medium rugs</h3>
+              <p class="text-gray-600 text-sm flex-grow">75 sq. ft. Covers washing, sucking out moisture, and drying.</p>
+              <p class="text-green-500 font-semibold mt-4">₦33,750</p>
+          </div>
+      </div>
+  </div>
+
+  <div id="fumigation-screen" class="hidden fixed inset-0 bg-white md:max-w-3xl mx-auto my-4 rounded-xl shadow-2xl p-6 animate-slide-in overflow-y-auto z-50">
+      <button class="close-modal absolute top-4 right-4 text-gray-600 hover:text-gray-800 text-xl">×</button>
+      <a href="#" id="back-to-service-fumigation" class="flex items-center text-gray-800 font-medium mb-6 hover:text-green-500 transition">
+          <span class="mr-2 text-xl">←</span> Back
+      </a>
+      <h1 class="text-3xl font-semibold text-gray-800 mb-6">Select Fumigation</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div id="fumigation-1" data-bedroom="One Bedroom" data-price="60750" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex justify-between">
+              <div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">One Bedroom</h3>
+                  <p class="text-gray-600 text-sm">Up to One hour</p>
+              </div>
+              <p class="text-green-500 font-semibold">₦60,750</p>
+          </div>
+          <div id="fumigation-2" data-bedroom="Two Bedroom" data-price="67500" class="bedroom-option bg-white border border-gray-200 rounded-2xl p-6 cursor-pointer hover:shadow-lg transition flex justify-between">
+              <div>
+                  <h3 class="text-lg font-semibold text-gray-800 mb-1">Two Bedroom</h3>
+                  <p class="text-gray-600 text-sm">Up to One hour</p>
+              </div>
+              <p class="text-green-500 font-semibold">₦67,500</p>
+          </div>
+      </div>
+  </div>
     <script src="/script/navbar.js"></script>
+    <script src="script/modalone.js"></script>
   </body>
 </html>

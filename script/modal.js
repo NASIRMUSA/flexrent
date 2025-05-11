@@ -56,3 +56,27 @@ function ShowCreateAccount(){
     document.getElementById('showaccount').style.display = 'block'
     document.getElementById('login').style.display = 'none';
 }
+function ShowDeepCleaning(){
+    document.getElementById('deepcleaning').style.display = 'block';
+    document.getElementById('selectService').style.display = 'none';
+}
+function BackToSelectServiceTwo(){
+    document.getElementById('selectService').style.display = 'block';
+    document.getElementById('deepcleaning').style.display = 'none';
+}
+function ShowRugs(){
+    document.getElementById('rugsandcapet').style.display = 'block';
+    document.getElementById('selectService').style.display = 'none';
+}
+function BackToSelectServiceThree(){
+    document.getElementById('selectService').style.display = 'block';
+    document.getElementById('rugsandcapet').style.display = 'none';
+}
+function ShowFumigation(){
+    document.getElementById('fumigation').style.display = 'block';
+    document.getElementById('selectService').style.display = 'none';
+}
+function BackToFumigation(){
+    document.getElementById('fumigation').style.display = 'none';
+    document.getElementById('selectService').style.display = 'block';
+}
