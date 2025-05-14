@@ -175,7 +175,7 @@ function populateVerificationDetails() {
 
 // --- Final Action: Send to WhatsApp ---
 function proceedToPayment() {
-    const whatsappNumber = "+234810353337"; // Make sure the number is correct
+    const whatsappNumber = "+2348100353337"; // Make sure the number is correct
 
     // Ensure all necessary data is present
     if (!bookingData.serviceType || !bookingData.userName || !bookingData.userPhone || !bookingData.date || !bookingData.time) {
