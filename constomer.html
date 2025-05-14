@@ -10,6 +10,28 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet" />
+       <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#e6f4e6',
+                            100: '#c8e6c9',
+                            200: '#a5d6a7',
+                            300: '#81c784',
+                            400: '#66bb6a',
+                            500: '#4caf50',
+                            600: '#43a047',
+                            700: '#388e3c',
+                            800: '#2e7d32',
+                            900: '#1b5e20',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
   </head>
   <body>
     >
@@ -212,130 +234,327 @@
     </header>
 
     <main class="bg-green-50 py-8 px-6 sm:px-10 max-w-4xl mx-auto">
-        <!-- Subscription Section -->
-        <section id="subscription" class="mb-10">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-5 pb-1 border-b-2 border-green-200">1. SUBSCRIPTION</h2>
-      
-          <h3 class="text-xl sm:text-2xl font-medium text-green-700 mt-6 mb-4">Paused Subscription Policy</h3>
-          <p class="text-gray-700 mb-4">
-            We understand that you may need to pause your cleaning subscription
-            due to travel or other commitments. FlexRentz NeatClean offers
-            flexible pause options, provided we are notified at least two (2) days
-            in advance with the following details:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-            <li>Start date of the pause period (Submit via your customer dashboard)</li>
-            <li>End date of the pause period (Submit via your customer dashboard)</li>
-          </ul>
-          <p class="text-gray-700 mb-6">
-            Upon confirmation, we will pause your subscription for a period of one
-            (1) to four (4) weeks per quarter. Your regular cleaning schedule will
-            resume as soon as we receive notice of your availability.
-          </p>
-      
-          <div class="bg-green-100 border-l-4 border-green-800 p-4 sm:p-5 my-6 rounded">
-            <p class="font-semibold text-green-800 mb-2">PLEASE NOTE</p>
-            <ul class="text-green-800 space-y-2 text-sm sm:text-base">
-              <li>- No cleaning services will be provided once a subscription expires.</li>
-              <li>- A paused subscription must not exceed four (4) weeks. If it does, the subscription is considered forfeited and a new payment is required to resume cleaning.</li>
-              <li>- If the apartment is unattended or abandoned during the pause period, a deep cleaning service will be required before regular service can resume.</li>
-            </ul>
-          </div>
-        </section>
-      
-        <!-- Booking Section -->
-        <section id="booking" class="mb-10">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-5 pb-1 border-b-2 border-green-200">2. BOOKING</h2>
-      
-          <h3 class="text-xl sm:text-2xl font-medium text-green-700 mt-6 mb-4">Cleaning Appointment Guidelines</h3>
-          <p class="text-gray-700 mb-4">
-            We aim to ensure that our Cleaning Pros arrive on time for your
-            scheduled service. At the time of booking, please indicate:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-            <li>Whether you will be at home to receive the Pros</li>
-            <li>If a doorman or alternative access arrangement is available</li>
-          </ul>
-          <p class="text-gray-700 mb-4">
-            Our Pros will wait up to 40 minutes at the location. If access is not
-            granted within this time, the appointment will be forfeited and the
-            Pros will be reassigned.
-          </p>
-          <p class="text-gray-700 mb-6 font-semibold">
-            Important: Please ensure that all valuable items are
-            put away prior to your cleaning appointment.
-          </p>
-      
-          <h3 class="text-xl sm:text-2xl font-medium text-green-700 mt-6 mb-4">Rescheduling Policy</h3>
-          <p class="text-gray-700 mb-4">
-            You will receive a reminder of your cleaning schedule 24 hours in
-            advance via email or SMS. At this time, you may:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-            <li>Confirm the scheduled appointment</li>
-            <li>Request to reschedule or cancel</li>
-          </ul>
-          <p class="text-gray-700 mb-6">
-            No response indicates automatic confirmation, and the cleaning will
-            proceed as scheduled.
-          </p>
-      
-          <div class="bg-green-100 border-l-4 border-green-800 p-4 sm:p-5 my-6 rounded">
-            <p class="font-semibold text-green-800 mb-2">PLEASE NOTE</p>
-            <ul class="text-green-800 space-y-2 text-sm sm:text-base">
-              <li>- Customers can cancel or reschedule without penalty by providing a written notice at least 24 hours before the scheduled service time.</li>
-              <li>- Cancellations made at the time of visit will incur a 17% processing fee based on the total bill.</li>
-              <li>- For FlexRentz Lite package holders: If our Pros are not allowed into the premises at the scheduled time, the session will be automatically forfeited.</li>
-            </ul>
-          </div>
-        </section>
-      
-        <!-- Cancellation Section -->
-        <section id="cancellation">
-          <h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-5 pb-1 border-b-2 border-green-200">3. CANCELLATION & REFUND POLICIES</h2>
-      
-          <h3 class="text-xl sm:text-2xl font-medium text-green-700 mt-6 mb-4">Cleaning Appointment Guidelines</h3>
-          <p class="text-gray-700 mb-4">
-            We aim to ensure that our Cleaning Pros arrive on time for your
-            scheduled service. At the time of booking, please indicate:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-            <li>Whether you will be at home to receive the Pros</li>
-            <li>If a doorman or alternative access arrangement is available</li>
-          </ul>
-          <p class="text-gray-700 mb-4">
-            Our Pros will wait up to 40 minutes at the location. If access is not
-            granted within this time, the appointment will be forfeited and the
-            Pros will be reassigned.
-          </p>
-          <p class="text-gray-700 mb-6 font-semibold">
-            Important: Please ensure that all valuable items are
-            put away prior to your cleaning appointment.
-          </p>
-      
-          <h3 class="text-xl sm:text-2xl font-medium text-green-700 mt-6 mb-4">Rescheduling Policy</h3>
-          <p class="text-gray-700 mb-4">
-            You will receive a reminder of your cleaning schedule 24 hours in
-            advance via email or SMS. At this time, you may:
-          </p>
-          <ul class="list-disc pl-6 mb-4 text-gray-700 space-y-2">
-            <li>Confirm the scheduled appointment</li>
-            <li>Request to reschedule or cancel</li>
-          </ul>
-          <p class="text-gray-700 mb-6">
-            No response indicates automatic confirmation, and the cleaning will
-            proceed as scheduled.
-          </p>
-      
-          <div class="bg-green-100 border-l-4 border-green-800 p-4 sm:p-5 my-6 rounded">
-            <p class="font-semibold text-green-800 mb-2">PLEASE NOTE</p>
-            <ul class="text-green-800 space-y-2 text-sm sm:text-base">
-              <li>- Customers can cancel or reschedule without penalty by providing a written notice at least 24 hours before the scheduled service time.</li>
-              <li>- Cancellations made at the time of visit will incur a 17% processing fee based on the total bill.</li>
-              <li>- For FlexRentz Lite package holders: If our Pros are not allowed into the premises at the scheduled time, the session will be automatically forfeited.</li>
-            </ul>
-          </div>
-        </section>
+        
+    <!-- Main Container -->
+    <div class="  mx-auto px-4 mb-12">
+        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+            <!-- Subscription Section -->
+            <section id="subscription" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">1. SUBSCRIPTION</h2>
+                <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Paused Subscription Policy</h3>
+                <p class="mb-4">We understand that you may need to pause your cleaning subscription due to travel or other commitments. FlexRentz NeatClean offers flexible pause options, provided we are notified at least two (2) days in advance with the following details:</p>
+                <ul class="list-disc pl-6 mb-4 space-y-2">
+                    <li>Start date of the pause period (Submit via your customer dashboard)</li>
+                    <li>End date of the pause period (Submit via your customer dashboard)</li>
+                </ul>
+                <p class="mb-4">Upon confirmation, we will pause your subscription for a period of one (1) to four (4) weeks per quarter. Your regular cleaning schedule will resume as soon as we receive notice of your availability.</p>
+                <div class="bg-gray-100 border-l-4 border-or-500 p-4 my-6">
+                    <strong class="font-bold text-gray-800">PLEASE NOTE</strong>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>No cleaning services will be provided once a subscription expires.</li>
+                        <li>A paused subscription must not exceed four (4) weeks. If it does, the subscription is considered forfeited and a new payment is required to resume cleaning.</li>
+                        <li>If the apartment is unattended or abandoned during the pause period, a deep cleaning service will be required before regular service can resume.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Booking Section -->
+            <section id="booking" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">2. BOOKING</h2>
+                <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Cleaning Appointment Guidelines</h3>
+                <p class="mb-4">We aim to ensure that our Cleaning Pros arrive on time for your scheduled service. At the time of booking, please indicate:</p>
+                <ul class="list-disc pl-6 mb-4 space-y-2">
+                    <li>Whether you will be at home to receive the Pros</li>
+                    <li>If a doorman or alternative access arrangement is available</li>
+                </ul>
+                <p class="mb-4">Our Pros will wait up to 40 minutes at the location. If access is not granted within this time, the appointment will be forfeited and the Pros will be reassigned.</p>
+                <p class="font-bold mb-6">Important: Please ensure that all valuable items are put away prior to your cleaning appointment.</p>
+
+                <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Rescheduling Policy</h3>
+                <p class="mb-4">You will receive a reminder of your cleaning schedule 24 hours in advance via email or SMS. At this time, you may:</p>
+                <ul class="list-disc pl-6 mb-4 space-y-2">
+                    <li>Confirm the scheduled appointment</li>
+                    <li>Request to reschedule or cancel</li>
+                </ul>
+                <p class="mb-4">No response indicates automatic confirmation, and the cleaning will proceed as scheduled.</p>
+                <div class="bg-gray-100 border-l-4 border-or-500 p-4 my-6">
+                    <strong class="font-bold text-gray-800">PLEASE NOTE</strong>
+                    <ul class="list-disc pl-6 mt-2 space-y-1">
+                        <li>Customers can cancel or reschedule without penalty by providing a written notice at least 24 hours before the scheduled service time.</li>
+                        <li>Cancellations made at the time of visit will incur a 17% processing fee based on the total bill.</li>
+                        <li>For FlexRentz Lite package holders: If our Pros are not allowed into the premises at the scheduled time, the session will be automatically forfeited.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Cancellation & Refund Section -->
+            <section id="cancellation-refund" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">3. CANCELLATION & REFUND POLICIES</h2>
+                <p class="mb-4">At FlexRentz NeatClean, we prioritize your satisfaction and aim to provide a consistently reliable experience. While we understand that plans may change, last-minute cancellations can result in losses for our cleaning professionals. This cancellation and refund policy is designed to ensure fairness and proper compensation for all parties involved—You (the Customer) and FlexRentz NeatClean.</p>
+                
+                <div class="overflow-x-auto mt-6">
+                    <table class="min-w-full border border-gray-200">
+                        <thead>
+                            <tr class="bg-primary-100">
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Type</th>
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Description</th>
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Fee</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Same Day Rescheduling</td>
+                                <td class="px-4 py-3 border border-gray-300">Reschedule in writing 16 hours or 5pm the day before the appointment. You can send an email to Homes@flexrentzneat&clean with your full name and email address and preferred rescheduled day in coming week.</td>
+                                <td class="px-4 py-3 border border-gray-300">No Charges Applied</td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Short Notice Rescheduling</td>
+                                <td class="px-4 py-3 border border-gray-300">Rescheduling within 16 hrs before the appointment or after 5pm the day before the appointment</td>
+                                <td class="px-4 py-3 border border-gray-300">17% of booking billed for impromptu rescheduling</td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Missed Appointment</td>
+                                <td class="px-4 py-3 border border-gray-300">An associate arrives for a scheduled appointment, but they're unable to gain entry 30 mins after timely arrival</td>
+                                <td class="px-4 py-3 border border-gray-300">17% of booking billed for late availability</td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Refund</td>
+                                <td class="px-4 py-3 border border-gray-300">Refund happens when customers do not want service without being used or Refund happens when the wrong service is booked</td>
+                                <td class="px-4 py-3 border border-gray-300">The only fee applicable is the processing fee by our 3rd-party payment partner which ranges between 1%-1.5% for local currency and up to 4% for international currency. Refund may take up to 21 working days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 class="text-xl font-semibold text-primary-700 mt-8 mb-3">Booking Slots for One-time Regular and Subscription Cleaning</h3>
+                <p class="mb-4">At Fichaya there are two cleaning slots per day which are 9 am and 2 pm. Any selected time slot outside the 9 am and 2 pm time slot will attract an extra service charge of twenty percent (20%).</p>
+                
+                <h4 class="text-lg font-medium text-primary-600 italic mt-6 mb-2">Booking for a Cleaning on Sundays</h4>
+                <p class="mb-4">Booking a cleaning for Sunday attracts an extra charge of thirty percent (30%).</p>
+                
+                <h4 class="text-lg font-medium text-primary-600 italic mt-6 mb-2">Instant Bookings</h4>
+                <p class="mb-4">For instant bookings, this can happen at any time of the day till 1 pm. This attracts a 30% surge per this service request. The latest time for an instant cleaning on the same day booking ends by 4pm.</p>
+                
+                <div class="bg-gray-100 border-l-4 border-or-500 p-4 my-6">
+                    <strong class="font-bold text-gray-800">Please note:</strong> A booking that happens after 5pm for a cleaning for the following day is considered as an 'Instant Booking', too and the fee applies.
+                </div>
+                
+                <h4 class="text-lg font-medium text-primary-600 italic mt-6 mb-2">Lockout Policy</h4>
+                <p class="mb-4">We know you lead a busy lifestyle, and your schedule can change on a dime, but if the cleaning associate is unable to carry out the booking, they end up losing valuable work and spending time and money on transportation.</p>
+                <p class="mb-4">In the circumstance that our cleaning associate is delayed, sent away or locked out from your home between these hours, you will be charged 17% of the booking fee. However, we will make every effort to work within the time frames requested.</p>
+                
+                <h3 class="text-xl font-semibold text-primary-700 mt-8 mb-3">CLEANING REMINDER</h3>
+                <p class="mb-4">All cleaning reminders must be acknowledged. Failure to do so mean the cleaning will still go on as booked and planned, and the associate would be sent. If the associate is not allowed in and the cleaning needs to be rescheduled a 30% penalty fee will be collected.</p>
+            </section>
+
+            <!-- Services Section -->
+            <section id="services-expect" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">SERVICES & WHAT TO EXPECT</h2>
+                <p class="mb-6">Below are some of our cleaning services and what a customer should expect especially for the One-time cleaning, Subscription cleaning, Deep cleaning and Post-construction cleaning, Couch and Rug cleaning.</p>
+
+                <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Cleaning Activities covered under One-time and Subscription Cleaning</h3>
+                <div class="overflow-x-auto mt-6">
+                    <table class="min-w-full border border-gray-200">
+                        <thead>
+                            <tr class="bg-primary-100">
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Apartment Section</th>
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Cleaning Activities</th>
+                                <th class="px-4 py-3 text-left font-semibold text-primary-800 border border-gray-300">Cleaning Activities NOT Covered</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Living Room</td>
+                                <td class="px-4 py-3 border border-gray-300">
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Cobwebs Taken Out</li>
+                                        <li>All surfaces Dusted and Wiped</li>
+                                        <li>Door Knobs and Door Frames Polished.</li>
+                                        <li>Light Switches cleaned</li>
+                                        <li>Clean Mirrors.</li>
+                                    </ul>
+                                </td>
+                                <td class="px-4 py-3 border border-gray-300" rowspan="4">
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Windows and Blinds</li>
+                                        <li>Cleaning inside of appliances (Fridge, Stovetop, Microwave and Oven).</li>
+                                        <li>Cleaning inside Kitchen cabinets</li>
+                                        <li>Moving heavy things around to clean</li>
+                                        <li>Under the bed</li>
+                                        <li>Cleaning of Shoes and standing fan</li>
+                                        <li>Washing of shower curtains</li>
+                                        <li>Washing of foot mat</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Bedroom</td>
+                                <td class="px-4 py-3 border border-gray-300">
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Cobwebs Taken Out</li>
+                                        <li>All surfaces dusted and polished</li>
+                                        <li>Hard Surfaces Swept and Cleaned</li>
+                                        <li>Beds arranged and laid neatly</li>
+                                        <li>Empty and wash trash can.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Kitchen</td>
+                                <td class="px-4 py-3 border border-gray-300">
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Cobwebs Taken Out</li>
+                                        <li>Wash dishes</li>
+                                        <li>Clean kitchen counters and Table Tops</li>
+                                        <li>Clean the outside of appliances (Fridge, Stovetop, Microwave, and Oven).</li>
+                                        <li>Clean inside the sink.</li>
+                                        <li>Hard Surfaces Swept and cleaned</li>
+                                        <li>Empty and wash the trash can.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                            <tr class="bg-white even:bg-gray-50">
+                                <td class="px-4 py-3 border border-gray-300">Restroom and Bathroom</td>
+                                <td class="px-4 py-3 border border-gray-300">
+                                    <ul class="list-disc pl-6 space-y-1">
+                                        <li>Cobwebs Taken Out</li>
+                                        <li>Urinals, Toilets, and Toilet seats wash</li>
+                                        <li>Hard Surfaces Swept and Cleaned</li>
+                                        <li>Tiles and Bathtub washed</li>
+                                        <li>Mirrors Cleaned</li>
+                                        <li>Empty and wash trash can.</li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Additional tables for other services would follow the same pattern -->
+                <!-- I've included one example table, the others would be similar -->
+                
+                <!-- Payment Terms Section -->
+                <section id="payment-terms" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                    <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">4. PAYMENT TERMS</h2>
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Service Fee</h3>
+                    <p class="mb-4">Service prices are based on the official price list available on the FlexRentz NeatClean website, unless otherwise agreed upon in writing. If a customer's submitted information (e.g., incorrect apartment size or condition) is inaccurate, the final fee will be recalculated by mutual agreement according to the current pricing for services of equivalent scope.</p>
+                    <p class="mb-6">The Company reserves the right to adjust its pricing. Customers will be notified in writing 30 days in advance of any price changes.</p>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Subscription Breakdown:</h3>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Weekly Plan = 4 consecutive weekly cleaning cycles</li>
+                        <li>Bi-Monthly Plan = 2 cleaning cycles, every two weeks per month</li>
+                        <li>Bi-Weekly Plan = 2 cleaning sessions per week, across 4 weeks</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Automatic Renewal</h3>
+                    <p class="mb-4">We recommend using the card payment method for all bookings. By agreeing to our Terms, you authorize FlexRentz NeatClean (or a trusted third-party processor) to charge your card or approved payment method either once or on a recurring basis based on your selected plan.</p>
+                    <p class="mb-6">To cancel automatic renewal, kindly contact our Relationship Management Team.</p>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Reusable Payment Links</h3>
+                    <p class="mb-6">Customers may use reusable payment links provided by FlexRentz NeatClean, as long as the service type and plan remain the same.</p>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Upfront Payment Discounts</h3>
+                    <p class="mb-4">Customers are encouraged to pay upfront for uninterrupted cleaning services.</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Six (6) months upfront payments are eligible for a 5% discount.</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Official Bank Accounts Only</h3>
+                    <p class="mb-4">We will never request payments into personal accounts. Payments must be made through:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>The official FlexRentz NeatClean website</li>
+                        <li>Verified invoices issued with approved business account details</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Taxes</h3>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Nigeria: Services are exclusive of tax. The approved Value Added Tax (VAT) is 7.5%.</li>
+                        <li>USA: Services are exclusive of applicable Sales Tax based on current federal/state regulations. (Exact rate varies by jurisdiction.)</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Tipping</h3>
+                    <p class="mb-4">Customers may choose to tip Cleaning Pros in appreciation of excellent service. However, all special or out-of-scope tasks must be routed through the Relationship Manager or official customer service channels.</p>
+                </section>
+
+                <!-- Cleaning Pros Section -->
+                <section id="cleaning-pros" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                    <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">5. CLEANING PROS</h2>
+                    <p class="mb-4">At FlexRentz NeatClean, safety and trust are top priorities. All Cleaning Pros undergo thorough background checks and are deployed based on confirmed bookings.</p>
+                    <p class="mb-4">Customers may express a preference for certain Cleaning Pros. However, for quality control, pros may be reshuffled every 3 months.</p>
+                    <p class="font-bold mb-4">Reminder:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Customers must store valuables securely before cleaning begins.</li>
+                        <li>Confirm everything is in order before the Cleaning Pro leaves.</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Respect Policy:</h3>
+                    <p class="mb-4">Customers are expected to treat all Cleaning Pros with the utmost respect.</p>
+                </section>
+
+                <!-- Add-ons Section -->
+                <section id="add-ons" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                    <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">6. ADD-ONS</h2>
+                    <p class="mb-4">FlexRentz NeatClean offers optional Add-Ons to enhance customer satisfaction.</p>
+                    <p class="mb-4">Upon booking a regular cleaning on flexrentzneatclean.com, a cleaning checklist is displayed. This ensures you understand what the service covers. <strong>Add-Ons (e.g., Oven, Fridge, Windows)</strong> are not included in regular cleaning packages and must be purchased separately through the booking platform.</p>
+                </section>
+
+                <!-- Theft & Damages Section -->
+                <section id="theft-damages" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                    <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">7. THEFT & DAMAGES – SUCCESS PLEDGE</h2>
+                    <p class="mb-4">FlexRentz NeatClean offers optional Add-Ons to enhance customer satisfaction.</p>
+                    <p class="mb-4">Upon booking a regular cleaning on flexrentzneatclean.com, a cleaning checklist is displayed. This ensures you understand what the service covers. <strong>Add-Ons (e.g., Oven, Fridge, Windows)</strong> are not included in regular cleaning packages and must be purchased separately through the booking platform.</p>
+                    <p class="mb-4">To provide peace of mind, customers are required to pay a ₦1,000 Success Pledge as insurance against theft or damages caused by a Cleaning Pro. Coverage Includes:</p>
+                    <ol class="list-decimal pl-6 mb-6 space-y-2">
+                        <li>Damages up to ₦50,000 caused during cleaning</li>
+                        <li>Theft of money/items by a Cleaning Pro during cleaning</li>
+                        <li>Only these items are covered. Any other claims fall outside this policy.</li>
+                    </ol>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Eligibility Requirements:</h3>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Success Pledge must be paid</li>
+                        <li>Property must be cleaned under official Terms of Service</li>
+                        <li>Booking must originate and be paid for via FlexRentz NeatClean</li>
+                        <li>Claim must be filed within 2 weeks of the service</li>
+                        <li>Customer must not owe any fees</li>
+                        <li>Valuables must be properly stored as outlined in Terms</li>
+                    </ul>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">To File a Claim:</h3>
+                    <p class="mb-6">Contact your Relationship Manager at +2348173602446 and email homes@flexrentzneatclean.com</p>
+                    
+                    <h3 class="text-xl font-semibold text-primary-700 mt-6 mb-3">Claim Process May Require:</h3>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Protection of damaged property</li>
+                        <li>Access for photo/video documentation</li>
+                        <li>Allowing site inspections</li>
+                        <li>Accepting repair as a first option</li>
+                        <li>Submitting any requested documents</li>
+                    </ul>
+                    
+                    <p class="mb-4">If the Pro is proven responsible, a refund of up to ₦50,000 will be processed. Repairs will be prioritized over replacements unless otherwise stated.</p>
+                    <p class="font-bold">Important: Theft claims require a valid police report implicating the Cleaning Pro directly. Otherwise, claims will not be acknowledged.</p>
+                </section>
+
+                <!-- Sexual Harassment Section -->
+                <section id="sexual-harassment" class="p-6 md:p-8 mb-6 bg-primary-50 rounded-lg">
+                    <h2 class="text-2xl font-bold text-primary-800 border-b-2 border-primary-200 pb-3 mb-4">8. SEXUAL HARASSMENT POLICY</h2>
+                    <p class="mb-4">FlexRentz NeatClean maintains a zero-tolerance policy against sexual harassment in all service environments.</p>
+                    <p class="mb-4">All customers are required to treat Cleaning Pros with dignity and respect. This includes refraining from the following behavior:</p>
+                    <p class="mb-2">Examples of Sexual Harassment:</p>
+                    <ul class="list-disc pl-6 mb-6 space-y-2">
+                        <li>Unwelcome sexual advances or requests</li>
+                        <li>Inappropriate or offensive jokes/comments</li>
+                        <li>Sharing explicit images or messages</li>
+                        <li>Unwanted touching or physical contact</li>
+                        <li>Stalking, threats, or sexually suggestive behavior</li>
+                    </ul>
+                    <p class="mb-4">All allegations will be investigated and may lead to service termination and legal action as required under Nigerian law.</p>
+                </section>
+            </div>
+        </div>
+    </div>
       </main>
       <footer class="bg-green-600 text-white pt-12 pb-8">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">

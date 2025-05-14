@@ -1,0 +1,77 @@
+@layer utilities {
+  /* Modern animations */
+  .modal-enter {
+    animation: modalEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes modalEnter {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .step-enter {
+    animation: stepEnter 0.3s ease-out forwards;
+  }
+  @keyframes stepEnter {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .step-exit {
+    animation: stepExit 0.2s ease-in forwards;
+  }
+  @keyframes stepExit {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+  }
+
+  /* Modern card hover effects */
+  .selectable-item {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  .selectable-item:hover {
+    @apply transform scale-[1.01] shadow-lg;
+  }
+  .selectable-item.selected {
+    @apply border-green-500 bg-green-50 shadow-md shadow-green-100/50 ring-1 ring-green-200;
+  }
+
+  /* Modern overlay */
+  .modal-overlay {
+    @apply backdrop-blur-sm;
+  }
+
+  /* Modern inputs */
+  .modern-input {
+    @apply transition-all duration-200 border-gray-300 focus:ring-2 focus:ring-green-400 focus:border-transparent;
+  }
+
+  /* Modern buttons */
+  .modern-btn {
+    @apply transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    .modal-content {
+      @apply max-h-[95vh] rounded-none;
+    }
+  }
+}
