@@ -97,7 +97,7 @@
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="flex items-center justify-between p-5 bg-white shadow-md">
+    <nav class="flex items-center justify-between p-5   container mx-auto">
       <!-- Logo -->
       <div class="flex items-center">
       <a href="index.html">  <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10" /></a>
@@ -282,12 +282,12 @@
     <main>
     <!-- Hero Section -->
     <section
-      class="relative bg-[url('images/hero.jpeg')] bg-cover bg-center h-screen flex items-center justify-start px-4 sm:px-12 md:px-16 lg:px-20 w-full">
+      class="relative bg-[url('images/hero.jpeg')] bg-cover bg-center h-screen flex items-center justify-start  sm:px-12 md:px-16 lg:px-20 w-full ">
       <!-- Dark overlay -->
       <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
 
       <!-- Hero content -->
-      <div class="relative z-20 max-w-2xl text-white">
+      <div class="relative z-20 text-white  container mx-auto -ml-6">
         <h1
           class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
           For the Days You’re Too<br> Tired - We’ve Got You
@@ -297,20 +297,20 @@
         </p>
         <button
           id="open-modal" onclick="openBookingModal()" 
-          class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300">
+          class="block bg-green-600 hover:bg-green-800 text-white px-7 py-3 rounded-full text-center mt-2 mb-2">
           Book Now
         </button>
       </div>
     </section>
-    <section class="py-12 pl-4 md:py-20 px-10 sm:px-6 lg:px-8 ">
-      <div class="max-w-7xl mx-auto">
+    <section class=" md:py-20  sm:px-6 lg:px-8  container mx-auto">
+      <div class="">
         <div class="flex flex-col lg:flex-row items-center gap-8 xl:gap-12">
           <!-- Text Section -->
           <div class="w-full lg:w-1/2 space-y-6">
             <h1
               class="text-3xl sm:text-4xl md:text-3xl font-medium text-green-600">
               Best Professional <br />
-              Cleaning Services In <br />
+              Cleaning Services In 
               <span class="text-green-600">Jalingo</span>
             </h1>
             <p class="text-lg text-gray-700">
@@ -327,7 +327,7 @@
               more comfortable.
             </p>
             <button
-              class="bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300">
+              class="bg-green-600 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300">
               Book A Service
             </button>
           </div>
@@ -348,18 +348,18 @@
         </div>
       </div>
     </section>
-    <section class="py-10 md:py-20 px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-green-500">Our Services</h1>
+    <section class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-green-600">Our Services</h1>
       <p class="text-gray-600 mb-10  mx-auto">
         We provide reliable, professional cleaning services tailored to your
         needs, ensuring every space is spotless, fresh, and stress-free.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8  p-3">
         <!-- Service Card 1 -->
         <div
           class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
+          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Upholstery Maintenance</h2>
           <p class="text-gray-600 mb-5 text-sm">
             We want all of our customers to experience the impressive level of
@@ -374,7 +374,7 @@
         <!-- Service Card 2 -->
         <div
           class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
+          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Rug Cleaning & Care</h2>
           <p class="text-gray-600 mb-5 text-sm">
             We pride ourselves on our exceptional customer service, and
@@ -389,7 +389,7 @@
         <!-- Service Card 3 -->
         <div
           class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-500 text-2xl"><i class="bi bi-arrow-up-right text-green-500 text-1xl"></i></span>
+          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
           <h2 class="text-xl font-bold mb-3">Organizing Consultation</h2>
           <p class="text-gray-600 mb-5 text-sm">
             Whenever you work with Flexrentz Neat/Clean, you can trust that
@@ -404,7 +404,7 @@
     </section>
     <section class="py-5 md:py-20 px-10 sm:px-6 lg:px-8">
       <div
-        class="max-w-6xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16">
+        class="max-w-6xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 p-5">
         <!-- Image Section -->
         <div class="w-full lg:w-1/2 pl-4">
           <img
@@ -415,7 +415,7 @@
 
         <!-- Content Section -->
         <div class="w-full lg:w-1/2 pl-4 ">
-          <h1 class="text-3xl sm:text-4xl font-bold text-green-500 mb-5">
+          <h1 class="text-3xl sm:text-4xl font-bold text-green-600 mb-5">
             Your Space Stays Spotless
           </h1>
           <p class="text-gray-600 mb-8">
@@ -430,7 +430,7 @@
             <div class="">
               <div
                 class="bg-blue-50 text-blue-500 text-2xl p-3 w-20 mr-4 flex justify-center items-center rounded-full mb-3 h-20 w-13">
-               <i class="bi bi-bucket text-green-500 text-4xl"></i>
+               <i class="bi bi-bucket text-green-600 text-4xl"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-1">Specialized Cleaning</h3>
@@ -445,7 +445,7 @@
             <div class="">
               <div
                 class="bg-blue-50 text-blue-500 text-2xl p-3 w-20 mr-4 flex justify-center items-center rounded-full mb-3 h-20 w-13">
-                <i class="bi bi-clock-history text-green-500 text-4xl"></i>
+                <i class="bi bi-clock-history text-green-600 text-4xl"></i>
               </div>
               <div>
                 <h3 class="text-xl font-semibold mb-1">24/7 Availability</h3>
@@ -457,8 +457,8 @@
             </div>
           </div>
 
-          <button
-            class="bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-8 rounded-full transition duration-300">
+          <button onclick="openBookingModal()"
+            class="bg-green-600 hover:bg-green-600 text-white font-medium py-4 px-8 rounded-full transition duration-300">
             Let's Get Started
           </button>
         </div>
@@ -467,7 +467,7 @@
 
     <section class="bg-green-50 py-16 px-10 sm:px-6 lg:px-8 text-center">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-bold text-green-500 mb-3">
+        <h2 class="text-3xl sm:text-4xl font-bold text-green-600 mb-3">
           What Our Clients Say About Us
         </h2>
         <p class="text-gray-600 mb-12">
@@ -541,7 +541,7 @@
     </section>
   </main>
     <footer class="bg-green-600 text-white pt-12 pb-8">
-      <div class=" mx-auto px-4 sm:px-6 lg:px-8">
+      <div class=" mx-auto px-4 sm:px-6 lg:px-8 container">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <!-- About Section -->
           <div class="footer-about">
@@ -1279,7 +1279,7 @@
                 type="date"
                 id="booking-date"
                 name="booking-date"
-                class="w-full p-3 border border-gray-300 rounded-lg modern-input text-green-500" />
+                class="w-full p-3 border border-gray-300 rounded-lg modern-input text-green-600" />
             </div>
             <div class="mb-4">
               <label
@@ -1291,7 +1291,7 @@
                 type="time"
                 id="booking-time"
                 name="booking-time"
-                class="w-full p-3 border border-gray-300 rounded-lg modern-input text-green-500" />
+                class="w-full p-3 border border-gray-300 rounded-lg modern-input text-green-600" />
             </div>
           </div>
           <button
