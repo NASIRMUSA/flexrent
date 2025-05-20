@@ -96,594 +96,433 @@
     </style>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="flex items-center justify-between p-5   container mx-auto">
-      <!-- Logo -->
-      <div class="flex items-center">
-      <a href="index.html">  <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10" /></a>
-      </div>
+<nav class="w-full px-4 sm:px-6 lg:px-8 mx-auto h-20 flex items-center justify-between relative z-50">
+  <!-- Logo -->
+  <div class="flex items-center">
+    <a href="index.html">
+      <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10" />
+    </a>
+  </div>
 
-      <!-- Mobile menu button (hidden on larger screens) -->
-      <div class="md:hidden">
-        <button
-          id="mobile-menu-button"
-          class="text-gray-700 hover:text-gray-900 focus:outline-none">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+  <!-- Mobile Menu Button -->
+  <div class="md:hidden">
+    <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <div class="hidden md:flex items-center space-x-8" id="nav-links">
+    <ul class="flex items-center space-x-8">
+      <li><a href="index.html" class="text-gray-800 hover:text-green-800 transition">Home</a></li>
+      <li class="relative group">
+        <a href="about.html" class="text-gray-800 hover:text-green-800 transition flex items-center">
+          About Us
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
           </svg>
-        </button>
-      </div>
-
-      <!-- Navigation Links -->
-      <div class="hidden md:flex items-center space-x-8" id="nav-links">
-        <ul class="flex items-center space-x-8">
-          <li>
-            <a
-              href="index.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Home</a
-            >
-          </li>
-
-          <!-- Dropdown Menu -->
-          <li class="relative group">
-            <a
-              href="about.html"
-              class="text-gray-800 hover:text-green-800 transition flex items-center">
-              About Us
-              <svg
-                class="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <ul
-              class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg p-4 w-48 z-50">
-              <li class="mb-2">
-                <a
-                  href="faq.html"
-                  class="text-gray-700 hover:text-green-700 block"
-                  >FAQS</a
-                >
-              </li>
-              <li>
-                <a
-                  href="constomer.html"
-                  class="text-gray-700 hover:text-green-700 block"
-                  >Customer Policy</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a  onclick="openBookingModal()" href="#"   class="text-gray-800 hover:text-green-800 transition"
-              >Book a Service</a
-            >
+        </a>
+        <!-- Dropdown -->
+        <ul class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg p-4 w-48 z-50">
+          <li class="mb-2">
+            <a href="faq.html" class="text-gray-700 hover:text-green-700 block">FAQS</a>
           </li>
           <li>
-            <a
-              href="pricing.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Contact Us</a
-            >
+            <a href="constomer.html" class="text-gray-700 hover:text-green-700 block">Customer Policy</a>
           </li>
         </ul>
-
-        <!-- Book Now Button -->
-        <button
-         onclick="openBookingModal()" 
-          class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
-          Book Now
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu (hidden by default) -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 py-2 absolute w-full z-50">
-      <ul class="space-y-2 px-4">
-        <li>
-          <a
-            href="index.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Home</a
-          >
-        </li>
-
-        <li class="relative">
-          <a
-            href="about.html"
-            class="block py-2 text-gray-800 hover:text-green-800 flex items-center justify-between">
-            About Us
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-          <ul class="pl-4 hidden" id="mobile-dropdown">
-            <li>
-              <a
-                href="faq.html"
-                class="block py-2 text-gray-700 hover:text-green-700"
-                >FAQS</a
-              >
-            </li>
-            <li>
-              <a
-                href="constomer.html"
-                class="block py-2 text-gray-700 hover:text-green-700"
-                >Customer Policy</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#" class="block py-2 text-gray-800 hover:text-green-800"
-            >Book a Service</a
-          >
-        </li>
-        <li>
-          <a
-            href="pricing.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a
-            href="contact.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Contact Us</a
-          >
-        </li>
-        <li>
-          <button
-            href="#" id="" onclick="openBookingModal()" 
-            class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center mt-2 mb-2">
-            Book Now
-          </button>
-        </li>
+      </li>
+      <li><a onclick="openBookingModal()" href="#" class="text-gray-800 hover:text-green-800 transition">Book a Service</a></li>
+      <li><a href="pricing.html" class="text-gray-800 hover:text-green-800 transition">Pricing</a></li>
+      <li><a href="contact.html" class="text-gray-800 hover:text-green-800 transition">Contact Us</a></li>
+    </ul>
+    <button onclick="openBookingModal()" class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
+      Book Now
+    </button>
+  </div>
+</nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 py-4 px-4 absolute top-[80px] left-0 w-full z-40">
+  <ul class="space-y-2">
+    <li><a href="index.html" class="block py-2 text-gray-800 hover:text-green-800">Home</a></li>
+    <li class="relative">
+      <a href="about.html" class="block py-2 text-gray-800 hover:text-green-800 flex items-center justify-between">
+        About Us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+      <ul class="pl-4 hidden" id="mobile-dropdown">
+        <li><a href="faq.html" class="block py-2 text-gray-700 hover:text-green-700">FAQS</a></li>
+        <li><a href="constomer.html" class="block py-2 text-gray-700 hover:text-green-700">Customer Policy</a></li>
       </ul>
+    </li>
+    <li><a href="#" class="block py-2 text-gray-800 hover:text-green-800">Book a Service</a></li>
+    <li><a href="pricing.html" class="block py-2 text-gray-800 hover:text-green-800">Pricing</a></li>
+    <li><a href="contact.html" class="block py-2 text-gray-800 hover:text-green-800">Contact Us</a></li>
+    <li>
+      <button onclick="openBookingModal()" class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center w-full mt-2">
+        Book Now
+      </button>
+    </li>
+  </ul>
+</div>
+
+  <!-- Hero Section -->
+<section class="relative h-screen w-full overflow-hidden mb-12">
+  <!-- Background Image - Improved display -->
+  <div class="absolute inset-0">
+    <img src="images/hero.jpeg" alt="Cleaning service" 
+         class="w-full h-full object-cover object-contain" />
+    <div class="absolute inset-0 bg-black/30 z-10"></div>
+  </div>
+  
+  <!-- Hero content - aligned with navbar padding -->
+  <div class="container mx-auto h-full flex items-center  relative z-20">
+    <div class="text-white max-w-2xl ">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        For the Days You're Too<br class="hidden sm:block"/> Tired - We've Got You
+      </h1>
+      <p class="text-lg sm:text-xl text-gray-100 mb-8">
+        Say goodbye to scrubbing, sweeping, and stressing. Our expert team brings a touch of calm to your space with meticulous, reliable cleaning.
+      </p>
+      <button onclick="openBookingModal()" 
+              class="bg-green-600 hover:bg-green-800 text-white px-8 py-3 rounded-full text-lg font-medium transition-colors duration-300">
+        Book Now
+      </button>
     </div>
-    <main>
-    <!-- Hero Section -->
-    <section
-      class="relative bg-[url('images/hero.jpeg')] bg-cover bg-center h-screen flex items-center justify-start  sm:px-12 md:px-16 lg:px-20 w-full mb-6">
-      <!-- Dark overlay -->
-      <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+  </div>
+</section>
 
-      <!-- Hero content -->
-      <div class="relative z-20 text-white  container mx-auto px-3">
-        <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-          For the Days You’re Too<br> Tired - We’ve Got You
-        </h1>
-        <p class="text-md sm:text-xl text-gray-200 mb-8">
-          Say goodbye to scrubbing, sweeping, and stressing. Our expert team brings a touch of calm to your space with meticulous, reliable cleaning
-        </p>
-        <button
-          id="open-modal" onclick="openBookingModal()" 
-          class="block bg-green-600 hover:bg-green-800 text-white px-7 py-3 rounded-full text-center mt-2 mb-2">
-          Book Now
-        </button>
-      </div>
-    </section>
-    <section class=" md:py-20  sm:px-6 lg:px-8  container mx-auto px-3">
-      <div class="">
-        <div class="flex flex-col lg:flex-row items-center gap-8 xl:gap-12">
-          <!-- Text Section -->
-          <div class="w-full lg:w-1/2 space-y-6">
-            <h1
-              class="text-3xl sm:text-4xl md:text-3xl font-medium text-green-600">
-              Best Professional <br />
-              Cleaning Services In 
-              <span class="text-green-600">Jalingo</span>
-            </h1>
-            <p class="text-lg text-gray-700">
-              Flexrentz Neat and Clean is Jalingo's trusted name for
-              professional, stress-free cleaning services. With a dedicated
-              team, modern tools, and a strong focus on detail, they handle
-              everything from deep cleaning to routine maintenance — always with
-              care and precision.
-            </p>
-            <p class="text-lg text-gray-700">
-              What makes them the best isn't just how well they clean, but how
-              much they care. They value your time, your space, and your peace
-              of mind, delivering spotless results that make life easier and
-              more comfortable.
-            </p>
-            <button
-              class="bg-green-600 hover:bg-green-600 text-white font-semibold px-8 py-3 rounded-full transition duration-300">
-              Book A Service
-            </button>
-          </div>
+<section class="w-full px-4 sm:px-6 lg:px-8 mx-auto py-16 md:py-24 flex flex-col lg:flex-row justify-between items-center gap-12 lg:gap-20">
+  <!-- Text Section -->
+  <div class="w-full lg:w-1/2 space-y-6">
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-medium text-green-600 leading-tight">
+      Best Professional <br />
+      Cleaning Services In <span class="text-green-600">Jalingo</span>
+    </h1>
+    <p class="text-base md:text-lg text-gray-600">
+      Flexrentz Neat and Clean is Jalingo's trusted name for professional, stress-free cleaning services. With a dedicated team, modern tools, and a strong focus on detail, they handle everything from deep cleaning to routine maintenance — always with care and precision.
+    </p>
+    <p class="text-base md:text-lg text-gray-600 mb-8">
+      What makes them the best isn't just how well they clean, but how much they care. They value your time, your space, and your peace of mind, delivering spotless results that make life easier and more comfortable.
+    </p>
+    <button onclick="openBookingModal()" 
+            class="bg-green-600 hover:bg-green-700 text-white font-medium px-8 py-3 rounded-full transition-colors duration-300 text-lg">
+      Book A Service
+    </button>
+  </div>
 
-          <!-- Image Section -->
-          <div class="w-full lg:w-1/2 relative mt-8 lg:mt-0">
-            <div class="relative">
-              <img
-                src="images/cleaner1.jpg"
-                alt="Cleaner 1"
-                class="w-full max-w-lg rounded-lg  z-10 relative" />
-              <img
-                src="images/cleaner2.jpg"
-                alt="Cleaner 2"
-                class="hidden md:block absolute -bottom-8 right-[55%] w-2/5 w-[300px] h-auto rounded-lg  border-4 border-white z-20" />
-            </div>
-          </div>
+  <!-- Image Section -->
+  <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
+    <div class="relative w-full h-full min-h-[700px]">
+      <img src="images/cleaner1.jpg" alt="Professional cleaner" 
+           class="w-full h-full object-cover  relative z-10 max-h-[700px]" />
+      <img src="images/cleaner2.jpg" alt="Cleaning team" 
+           class="hidden md:block absolute -bottom-6 -left-6 z-20 w-[60%]  " />
+    </div>
+  </div>
+</section>
+<section class="w-full px-4 sm:px-6 lg:px-8 mx-auto py-16 md:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto text-center mb-12">
+    <h1 class="text-2xl sm:text-4xl md:text-5xl font-bold mb-4 text-green-600">Our Services</h1>
+    <p class="text-lg text-gray-600">
+      We provide reliable, professional cleaning services tailored to your needs, 
+      ensuring every space is spotless, fresh, and stress-free.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20">
+    <!-- Service Card 1 -->
+    <div class="bg-white rounded-xl overflow-hidden transition-shadow duration-300" style="width: 380px;">
+      <div class="p-6 pb-4">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-gray-800">Upholstery Maintenance</h2>
+          <span class="text-green-600 text-2xl">
+            <i class="bi bi-arrow-up-right"></i>
+          </span>
         </div>
+        <p class="text-gray-600 mb-6">
+          We want all of our customers to experience the impressive level of
+          professionalism when working with us.
+        </p>
       </div>
-    </section>
-    <section class="py-12 md:py-20 px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-3xl sm:text-4xl font-bold mb-3 text-green-600">Our Services</h1>
-      <p class="text-gray-600 mb-10  mx-auto">
-        We provide reliable, professional cleaning services tailored to your
-        needs, ensuring every space is spotless, fresh, and stress-free.
+      <img src="images/upholstery.jpg" alt="Upholstery Maintenance" 
+           class="w-full h-auto" />
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="bg-white rounded-xl overflow-hidden transition-shadow duration-300" style="width: 380px;">
+      <div class="p-6 pb-4">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-gray-800">Rug Cleaning & Care</h2>
+          <span class="text-green-600 text-2xl">
+            <i class="bi bi-arrow-up-right"></i>
+          </span>
+        </div>
+        <p class="text-gray-600 mb-6">
+          We pride ourselves on our exceptional customer service, and
+          guarantee you'll love working with our team.
+        </p>
+      </div>
+      <img src="images/rug-cleaning.jpg" alt="Rug Cleaning & Care" 
+           class="w-full h-auto" />
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="bg-white rounded-xl overflow-hidden transition-shadow duration-300" style="width: 380px;">
+      <div class="p-6 pb-4">
+        <div class="flex justify-between items-start mb-4">
+          <h2 class="text-xl font-bold text-gray-800">Organizing Consultation</h2>
+          <span class="text-green-600 text-2xl">
+            <i class="bi bi-arrow-up-right"></i>
+          </span>
+        </div>
+        <p class="text-gray-600 mb-6">
+          Whenever you work with Flexrentz Neat/Clean, you can trust that
+          you're in great hands.
+        </p>
+      </div>
+      <img src="images/organizing.jpg" alt="Organizing Consultation" 
+           class="w-full h-auto " />
+    </div>
+  </div>
+</section>
+    <section class="w-full px-4 sm:px-6 lg:px-8 mx-auto py-16 md:py-24 bg-white">
+  <div class=" mx-auto flex flex-col lg:flex-row items-center gap-12 xl:gap-16">
+    <!-- Image Section -->
+    <div class="w-full lg:w-1/2">
+      <img src="images/space.jpg" alt="Cleaning Professional" 
+           class="w-full rounded-xl object-cover h-auto lg:h-[650px]"
+           style="object-position: center;">
+    </div>
+
+    <!-- Content Section -->
+    <div class="w-full lg:w-1/2">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-6">
+        Your Space Stays Spotless
+      </h1>
+      <p class="text-lg text-gray-600 mb-10">
+        With Flexrentz Neat and Clean, your space stays spotless without the
+        hassle. Our team works with precision and care to ensure every
+        surface shines — from floors to ceilings, and everything in between.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8  p-3">
-        <!-- Service Card 1 -->
-        <div
-          class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
-          <h2 class="text-xl font-bold mb-3">Upholstery Maintenance</h2>
-          <p class="text-gray-600 mb-5 text-sm">
-            We want all of our customers to experience the impressive level of
-            professionalism when working with us.
-          </p>
-          <img
-            src="images/upholstery.jpg"
-            alt="Upholstery Maintenance"
-            class="w-full h-auto object-cover rounded-lg" />
-        </div>
-
-        <!-- Service Card 2 -->
-        <div
-          class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
-          <h2 class="text-xl font-bold mb-3">Rug Cleaning & Care</h2>
-          <p class="text-gray-600 mb-5 text-sm">
-            We pride ourselves on our exceptional customer service, and
-            guarantee you'll love working with our team.
-          </p>
-          <img
-            src="images/rug-cleaning.jpg"
-            alt="Rug Cleaning & Care"
-            class="w-full h-auto object-cover rounded-lg" />
-        </div>
-
-        <!-- Service Card 3 -->
-        <div
-          class="bg-white rounded-xl  overflow-hidden relative p-6 text-left">
-          <span class="absolute top-6 right-6 text-green-600 text-2xl"><i class="bi bi-arrow-up-right text-green-600 text-1xl"></i></span>
-          <h2 class="text-xl font-bold mb-3">Organizing Consultation</h2>
-          <p class="text-gray-600 mb-5 text-sm">
-            Whenever you work with Flexrentz Neat/Clean, you can trust that
-            you're in great hands.
-          </p>
-          <img
-            src="images/organizing.jpg"
-            alt="Organizing Consultation"
-            class="w-full h-80 object-cover rounded-lg" />
-        </div>
-      </div>
-    </section>
-    <section class="py-5 md:py-20  sm:px-2 lg:px-8">
-      <div
-        class="max-w-6xl flex flex-col lg:flex-row items-center gap-8 lg:gap-12 xl:gap-16 p-5">
-        <!-- Image Section -->
-        <div class="w-full lg:w-1/2 pl-4">
-          <img
-            src="images/space.jpg"
-            alt="Cleaning Professional"
-            class="w-full max-w-md mx-auto lg:max-w-full rounded-lg object-cover" />
-        </div>
-
-        <!-- Content Section -->
-        <div class="w-full lg:w-1/2 pl-4 ">
-          <h1 class="text-3xl sm:text-4xl font-bold text-green-600 mb-5">
-            Your Space Stays Spotless
-          </h1>
-          <p class="text-gray-600 mb-8">
-            With Flexrentz Neat and Clean, your space stays spotless without the
-            hassle. Our team works with precision and care to ensure every
-            surface shines — from floors to ceilings, and everything in between.
-          </p>
-
-          <!-- Features -->
-          <div class="space-y-6 mb-8">
-            <!-- Feature 1 -->
-            <div class="">
-              <div
-                class="bg-blue-50 text-blue-500 text-2xl p-3 w-20 mr-4 flex justify-center items-center rounded-full mb-3 h-20 w-13">
-               <i class="bi bi-bucket text-green-600 text-4xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-1">Specialized Cleaning</h3>
-                <p class="text-gray-600 text-sm sm:text-base">
-                  We offer expert cleaning solutions tailored to meet your
-                  needs.
-                </p>
-              </div>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="">
-              <div
-                class="bg-blue-50 text-blue-500 text-2xl p-3 w-20 mr-4 flex justify-center items-center rounded-full mb-3 h-20 w-13">
-                <i class="bi bi-clock-history text-green-600 text-4xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl font-semibold mb-1">24/7 Availability</h3>
-                <p class="text-gray-600 text-sm sm:text-base mb-3">
-                  We're here whenever you need us - day or night, weekend or
-                  holidays.
-                </p>
-              </div>
-            </div>
+      <!-- Features -->
+      <div class="space-y-8 mb-12">
+        <!-- Feature 1 -->
+        <div class="flex flex-col gap-4">
+          <div class="bg-green-50 p-4 rounded-xl flex-shrink-0" style="width: 70px;">
+            <i class="bi bi-bucket text-green-600 text-4xl"></i>
           </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">Specialized Cleaning</h3>
+            <p class="text-gray-600">
+              We offer expert cleaning solutions tailored to meet your needs.
+            </p>
+          </div>
+        </div>
 
-          <button onclick="openBookingModal()"
-            class="bg-green-600 hover:bg-green-600 text-white font-medium py-4 px-8 rounded-full transition duration-300">
-            Let's Get Started
-          </button>
+        <!-- Feature 2 -->
+        <div class="flex flex-col gap-4">
+          <div class="bg-green-50 p-4 rounded-xl flex-shrink-0" style="width: 70px;">
+            <i class="bi bi-clock-history text-gray-600 text-4xl"></i>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-2 text-gray-800">24/7 Availability</h3>
+            <p class="text-gray-600">
+              We're here whenever you need us - day or night, weekend or holidays.
+            </p>
+          </div>
         </div>
       </div>
-    </section>
 
-    <section class="bg-green-50 py-16 px-10 sm:px-6 lg:px-8 text-center">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl sm:text-4xl font-bold text-green-600 mb-3">
-          What Our Clients Say About Us
-        </h2>
-        <p class="text-gray-600 mb-12">
-          Our client testimonials underscore the convenience, reliability, and
-          top-notch quality of our cleaning services in Taraba.
+      <button onclick="openBookingModal()"
+        class="bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-8 rounded-full text-lg transition-colors duration-300 shadow-md hover:shadow-lg">
+        Let's Get Started
+      </button>
+    </div>
+  </div>
+</section>
+  <section class="w-full px-4 sm:px-6 lg:px-8 mx-auto py-16 md:py-24 bg-green-50">
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-green-600 mb-4">
+      What Our Clients Say About Us
+    </h2>
+    <p class="text-lg text-gray-600">
+      Our client testimonials underscore the convenience, reliability, and
+      top-notch quality of our cleaning services in Taraba.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    <!-- Testimonial 1 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 relative hover:shadow-xl transition-shadow duration-300">
+      <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+        <div class="relative">
+          <img src="images/testmonial1.jpg" alt="Adeyemi Paul" 
+               class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-md" />
+          <div class="absolute inset-0 rounded-full border-2 border-green-100 animate-ping opacity-30"></div>
+        </div>
+      </div>
+      <h3 class="mt-10 text-lg font-semibold text-gray-800 text-center">
+        Adeyemi Paul
+      </h3>
+      <div class="text-green-500 text-2xl text-center mt-2">“</div>
+      <p class="text-gray-600 mt-4 text-center leading-relaxed">
+        As a small business owner, keeping our office space clean is a top
+        priority. Flexrentz Neat and Clean has been our go-to service for
+        over a year now, and they've never disappointed. Their staff is
+        consistent, trustworthy, and always thorough.
+      </p>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 relative hover:shadow-xl transition-shadow duration-300 transform md:-translate-y-4">
+      <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+        <div class="relative">
+          <img src="images/testmonial2.jpg" alt="Amina Jibril" 
+               class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-md" />
+          <div class="absolute inset-0 rounded-full border-2 border-green-100 animate-ping opacity-30"></div>
+        </div>
+      </div>
+      <h3 class="mt-10 text-lg font-semibold text-gray-800 text-center">
+        Amina Jibril
+      </h3>
+      <div class="text-green-500 text-2xl text-center mt-2">“</div>
+      <p class="text-gray-600 mt-4 text-center leading-relaxed">
+        I hired Flexrentz Neat and Clean for a deep cleaning of my home,
+        and I was blown away by the results. The team arrived right on
+        time, fully equipped, and worked with so much attention to detail.
+        Every corner was spotless — even areas I hadn't noticed were dirty!
+      </p>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="bg-white rounded-2xl shadow-lg p-8 relative hover:shadow-xl transition-shadow duration-300">
+      <div class="absolute -top-8 left-1/2 transform -translate-x-1/2">
+        <div class="relative">
+          <img src="images/testmonial3.jpg" alt="Jennifer Ugo" 
+               class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-md" />
+          <div class="absolute inset-0 rounded-full border-2 border-green-100 animate-ping opacity-30"></div>
+        </div>
+      </div>
+      <h3 class="mt-10 text-lg font-semibold text-gray-800 text-center">
+        Jennifer Ugo
+      </h3>
+      <div class="text-green-500 text-2xl text-center mt-2">“</div>
+      <p class="text-gray-600 mt-4 text-center leading-relaxed">
+        I needed emergency cleaning and Flexrentz Neat and Clean came
+        through at the last minute. They were professional, fast, and
+        incredibly efficient. The entire house looked refreshed and ready
+        to welcome guests. It felt like working with people who truly care.
+      </p>
+    </div>
+  </div>
+</section>
+   <footer class="w-full bg-green-600 text-white pt-16 pb-10">
+  <div class=" mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <!-- About Section -->
+      <div>
+        <div class="flex items-center mb-5">
+          <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10">
+        </div>
+        <p class="text-white/90 text-sm leading-relaxed">
+          Flexrentz Neat and Clean is Jalingo's trusted name for professional, 
+          stress-free cleaning services. With a dedicated team, modern tools, 
+          and a strong focus on detail.
         </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
-          <!-- Testimonial 1 -->
-          <div
-            class="bg-white rounded-2xl shadow-[12px_12px_0px_#0f172a] p-6 relative">
-            <img
-              src="images/testmonial1.jpg"
-              alt="Adeyemi Paul"
-              class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-[0_0_0_4px_#c0e7c0] absolute -top-8 left-1/2 transform -translate-x-1/2" />
-            <h3 class="mt-10 text-lg font-semibold text-gray-800">
-              Adeyemi Paul
-            </h3>
-            <p class="text-2xl text-gray-900 mt-2">“</p>
-            <p class="text-gray-700 mt-2 text-sm sm:text-base leading-relaxed">
-              As a small business owner, keeping our office space clean is a top
-              priority. Flexrentz Neat and Clean has been our go-to service for
-              over a year now, and they've never disappointed. Their staff is
-              consistent, trustworthy, and always thorough. It's made a big
-              difference in our work environment.
-            </p>
-          </div>
-
-          <!-- Testimonial 2 -->
-          <div
-            class="bg-white rounded-2xl shadow-[12px_12px_0px_#0f172a] p-6 relative">
-            <img
-              src="images/testmonial2.jpg"
-              alt="Amina Jibril"
-              class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-[0_0_0_4px_#c0e7c0] absolute -top-8 left-1/2 transform -translate-x-1/2" />
-            <h3 class="mt-10 text-lg font-semibold text-gray-800">
-              Amina Jibril
-            </h3>
-            <p class="text-2xl text-gray-900 mt-2">“</p>
-            <p class="text-gray-700 mt-2 text-sm sm:text-base leading-relaxed">
-              I hired Flexrentz Neat and Clean for a deep cleaning of my home,
-              and I was blown away by the results. The team arrived right on
-              time, fully equipped, and worked with so much attention to detail.
-              Every corner was spotless — even areas I hadn't noticed were
-              dirty! I'll definitely be using them again.
-            </p>
-          </div>
-
-          <!-- Testimonial 3 -->
-          <div
-            class="bg-white rounded-2xl shadow-[12px_12px_0px_#0f172a] p-6 relative">
-            <img
-              src="images/testmonial3.jpg"
-              alt="Jennifer Ugo"
-              class="w-16 h-16 object-cover rounded-full border-4 border-white shadow-[0_0_0_4px_#c0e7c0] absolute -top-8 left-1/2 transform -translate-x-1/2" />
-            <h3 class="mt-10 text-lg font-semibold text-gray-800">
-              Jennifer Ugo
-            </h3>
-            <p class="text-2xl text-gray-900 mt-2">“</p>
-            <p class="text-gray-700 mt-2 text-sm sm:text-base leading-relaxed">
-              I needed emergency cleaning and Flexrentz Neat and Clean came
-              through at the last minute. They were professional, fast, and
-              incredibly efficient. The entire house looked refreshed and ready
-              to welcome guests. I really appreciate how flexible and
-              understanding they were — it felt like I was working with people
-              who truly care.
-            </p>
-          </div>
-        </div>
       </div>
-    </section>
-  </main>
-    <footer class="bg-green-600 text-white pt-12 pb-8">
-      <div class=" mx-auto px-4 sm:px-6 lg:px-8 container">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
-          <!-- About Section -->
-          <div class="footer-about">
-            <a href="#" class="flex items-center mb-4">
-              <img
-                src="images/flexrentz.png"
-                alt="Flexrentz Logo"
-                class="h-8 mr-2" />
-              
+
+      <!-- Services Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-5">Services</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="#" onclick="openBookingModal()" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-calendar-check mr-2"></i> Book a service
             </a>
-            <p class="text-white text-opacity-90 text-sm mt-4">
-              Flexrentz Neat and Clean is Jalingo's trusted name for
-              professional, stress-free cleaning services. With a dedicated
-              team, modern tools, and a strong focus on detail.
-            </p>
-          </div>
-
-          <!-- Services Links -->
-          <div class="footer-links">
-            <h4 class="text-lg font-semibold mb-4">Services</h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#" onclick="openBookingModal()"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >Book a service</a
-                >
-              </li>
-              <li>
-                <a
-                  href="constomer.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >Customer policy</a
-                >
-              </li>
-              <li>
-                <a
-                  href="pricing.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >Pricing</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="footer-links">
-            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="index.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a
-                  href="contact.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >Contact Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="about.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="faq.html"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center"
-                  >FAQs</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Social Links -->
-          <div class="footer-social">
-            <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
-            <ul class="space-y-2">
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
-                  <svg
-                    class="w-4 h-4 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      fill-rule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
-                  <svg
-                    class="w-4 h-4 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
-                  </svg>
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="text-white text-opacity-90 hover:text-opacity-100 hover:underline text-sm flex items-center">
-                  <svg
-                    class="w-4 h-4 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true">
-                    <path
-                      fill-rule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                      clip-rule="evenodd"></path>
-                  </svg>
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+          </li>
+          <li>
+            <a href="constomer.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-file-text mr-2"></i> Customer policy
+            </a>
+          </li>
+          <li>
+            <a href="pricing.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-tag mr-2"></i> Pricing
+            </a>
+          </li>
+        </ul>
       </div>
-       <p class="text-white text-opacity-80 text-center font-medium text-xs mb-4 md:mb-0">Copyright © 2025. Flexrentz. All rights reserved.</p>
-      </div>
-      </footer>
 
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-5">Quick Links</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="index.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+               Contact Us
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+             About Us
+            </a>
+          </li>
+          <li>
+            <a href="faq.html" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              </i> FAQs
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-5">Follow Us</h4>
+        <ul class="space-y-3">
+          <li>
+            <a href="#" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-facebook mr-2"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-twitter-x mr-2"></i> Twitter
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-instagram mr-2"></i> Instagram
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-white/90 hover:text-white hover:underline text-sm flex items-center transition">
+              <i class="bi bi-linkedin mr-2"></i> LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/20 pt-8">
+      <p class="text-white/80 text-center text-sm">
+        Copyright © 2025 Flexrentz. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
 
 
     <!-- <button
@@ -1425,14 +1264,14 @@
             </p>
             <div class="flex flex-wrap gap-2 mb-4">
               <span
-                class="badge bg-gray-200 px-3 py-1 rounded-full text-sm inline-flex items-center gap-1">
+                class="badge bg-green-600 text-white px-3 py-1 rounded-full text-sm inline-flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
                 <span id="verify-date">Date</span>
               </span>
               <span
-                class="badge bg-gray-200 px-3 py-1 rounded-full text-sm inline-flex items-center gap-1">
+                class="badge bg-green-600 text-white px-3 py-1 rounded-full text-sm inline-flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>

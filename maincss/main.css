@@ -1,3 +1,7 @@
+.container-fluid{
+
+}
+
 @layer utilities {
   /* Modern animations */
   .modal-enter {

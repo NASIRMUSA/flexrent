@@ -17,190 +17,83 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 <body>
-   <!-- Navigation -->
-    <nav class="flex items-center justify-between p-5   container mx-auto">
-      <!-- Logo -->
-      <div class="flex items-center">
-      <a href="index.html">  <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10" /></a>
-      </div>
+<nav class="w-full px-4 sm:px-6 lg:px-8 mx-auto h-20 flex items-center justify-between relative z-50">
+  <!-- Logo -->
+  <div class="flex items-center">
+    <a href="index.html">
+      <img src="images/flexrentz.png" alt="Flexrentz Logo" class="h-10" />
+    </a>
+  </div>
 
-      <!-- Mobile menu button (hidden on larger screens) -->
-      <div class="md:hidden">
-        <button
-          id="mobile-menu-button"
-          class="text-gray-700 hover:text-gray-900 focus:outline-none">
-          <svg
-            class="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"></path>
+  <!-- Mobile Menu Button -->
+  <div class="md:hidden">
+    <button id="mobile-menu-button" class="text-gray-700 hover:text-gray-900 focus:outline-none">
+      <!-- Hamburger Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Desktop Nav Links -->
+  <div class="hidden md:flex items-center space-x-8" id="nav-links">
+    <ul class="flex items-center space-x-8">
+      <li><a href="index.html" class="text-gray-800 hover:text-green-800 transition">Home</a></li>
+      <li class="relative group">
+        <a href="about.html" class="text-gray-800 hover:text-green-800 transition flex items-center">
+          About Us
+          <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 9l-7 7-7-7" />
           </svg>
-        </button>
-      </div>
-
-      <!-- Navigation Links -->
-      <div class="hidden md:flex items-center space-x-8" id="nav-links">
-        <ul class="flex items-center space-x-8">
-          <li>
-            <a
-              href="index.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Home</a
-            >
-          </li>
-
-          <!-- Dropdown Menu -->
-          <li class="relative group">
-            <a
-              href="about.html"
-              class="text-gray-800 hover:text-green-800 transition flex items-center">
-              About Us
-              <svg
-                class="w-4 h-4 ml-1"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <ul
-              class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg p-4 w-48 z-50">
-              <li class="mb-2">
-                <a
-                  href="faq.html"
-                  class="text-gray-700 hover:text-green-700 block"
-                  >FAQS</a
-                >
-              </li>
-              <li>
-                <a
-                  href="constomer.html"
-                  class="text-gray-700 hover:text-green-700 block"
-                  >Customer Policy</a
-                >
-              </li>
-            </ul>
-          </li>
-
-          <li>
-            <a  onclick="openBookingModal()" href="#"   class="text-gray-800 hover:text-green-800 transition"
-              >Book a Service</a
-            >
+        </a>
+        <!-- Dropdown -->
+        <ul class="absolute hidden group-hover:block bg-white rounded-lg shadow-lg p-4 w-48 z-50">
+          <li class="mb-2">
+            <a href="faq.html" class="text-gray-700 hover:text-green-700 block">FAQS</a>
           </li>
           <li>
-            <a
-              href="pricing.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Pricing</a
-            >
-          </li>
-          <li>
-            <a
-              href="contact.html"
-              class="text-gray-800 hover:text-green-800 transition"
-              >Contact Us</a
-            >
+            <a href="constomer.html" class="text-gray-700 hover:text-green-700 block">Customer Policy</a>
           </li>
         </ul>
-
-        <!-- Book Now Button -->
-        <button
-         onclick="openBookingModal()" 
-          class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
-          Book Now
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu (hidden by default) -->
-    <div
-      id="mobile-menu"
-      class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 py-2 absolute w-full z-50">
-      <ul class="space-y-2 px-4">
-        <li>
-          <a
-            href="index.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Home</a
-          >
-        </li>
-
-        <li class="relative">
-          <a
-            href="about.html"
-            class="block py-2 text-gray-800 hover:text-green-800 flex items-center justify-between">
-            About Us
-            <svg
-              class="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 9l-7 7-7-7"></path>
-            </svg>
-          </a>
-          <ul class="pl-4 hidden" id="mobile-dropdown">
-            <li>
-              <a
-                href="faq.html"
-                class="block py-2 text-gray-700 hover:text-green-700"
-                >FAQS</a
-              >
-            </li>
-            <li>
-              <a
-                href="constomer.html"
-                class="block py-2 text-gray-700 hover:text-green-700"
-                >Customer Policy</a
-              >
-            </li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="#" class="block py-2 text-gray-800 hover:text-green-800"
-            >Book a Service</a
-          >
-        </li>
-        <li>
-          <a
-            href="pricing.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Pricing</a
-          >
-        </li>
-        <li>
-          <a
-            href="contact.html"
-            class="block py-2 text-gray-800 hover:text-green-800"
-            >Contact Us</a
-          >
-        </li>
-        <li>
-          <button
-            href="#" id="" onclick="openBookingModal()" 
-            class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center mt-2 mb-2">
-            Book Now
-          </button>
-        </li>
+      </li>
+      <li><a onclick="openBookingModal()" href="#" class="text-gray-800 hover:text-green-800 transition">Book a Service</a></li>
+      <li><a href="pricing.html" class="text-gray-800 hover:text-green-800 transition">Pricing</a></li>
+      <li><a href="contact.html" class="text-gray-800 hover:text-green-800 transition">Contact Us</a></li>
+    </ul>
+    <button onclick="openBookingModal()" class="bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full transition ml-4">
+      Book Now
+    </button>
+  </div>
+</nav>
+  <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg rounded-lg mt-2 py-4 px-4 absolute top-[80px] left-0 w-full z-40">
+  <ul class="space-y-2">
+    <li><a href="index.html" class="block py-2 text-gray-800 hover:text-green-800">Home</a></li>
+    <li class="relative">
+      <a href="about.html" class="block py-2 text-gray-800 hover:text-green-800 flex items-center justify-between">
+        About Us
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+      <ul class="pl-4 hidden" id="mobile-dropdown">
+        <li><a href="faq.html" class="block py-2 text-gray-700 hover:text-green-700">FAQS</a></li>
+        <li><a href="constomer.html" class="block py-2 text-gray-700 hover:text-green-700">Customer Policy</a></li>
       </ul>
-    </div>
-      <main>
+    </li>
+    <li><a href="#" class="block py-2 text-gray-800 hover:text-green-800">Book a Service</a></li>
+    <li><a href="pricing.html" class="block py-2 text-gray-800 hover:text-green-800">Pricing</a></li>
+    <li><a href="contact.html" class="block py-2 text-gray-800 hover:text-green-800">Contact Us</a></li>
+    <li>
+      <button onclick="openBookingModal()" class="block bg-green-600 hover:bg-green-800 text-white px-6 py-2 rounded-full text-center w-full mt-2">
+        Book Now
+      </button>
+    </li>
+  </ul>
+</div>
+
+
        <section class="py-12 bg-white pt-16 pb-0 px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center mb-10 gap-8 container mx-auto">
     <!-- Text Content -->
     <div class="hero-text ">
